@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Global
+# Youzify
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+.bpht-hashtags-wrapper.bpht-hashtags-wrapper-list div + div {
+    margin-top: 10px;
+}
+
+.bpht-hashtags-wrapper.bpht-hashtags-wrapper-list a {
+    text-decoration: none;
+}
+
+.bpht-hashtags-wrapper.bpht-hashtags-wrapper-cloud {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.bpht-hashtags-wrapper.bpht-hashtags-wrapper-cloud > div {
+    display: inline-block;
+    margin: 3px;
+    border-radius: 30px;
+    background: rgba(210, 210, 210, 0.5);
+}
+
+.bpht-hashtags-wrapper.bpht-hashtags-wrapper-cloud > div:hover {
+    background: rgba(210, 210, 210, 0.7);
+}
+
+.bpht-hashtags-wrapper.bpht-hashtags-wrapper-cloud > div a {
+    display: inline-block;
+    padding: 5px 15px;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.bpht-clear-bp-hashtags {
+    height: 0px !important;
+}
+
+/*--------------------------------------------------------------
+# Youzify
+--------------------------------------------------------------*/
+.youzify .bpht-widget--hashtags {
+    padding: 25px;
+}
+.youzify-sidebar .widget_bpht_hashtag_widget span.bpht-text--muted,
+.youzify-sidebar .widget_bpht_hashtag_page_widget span.bpht-text--muted,
+.youzify-sidebar .widget_bpht_hashtag_post_widget span.bpht-text--muted {
+    padding: 18px 0 20px;
+    display: block;
+    margin: 0  25px;
+}
+/*# sourceMappingURL=buddypress-hashtags-public.css.map */

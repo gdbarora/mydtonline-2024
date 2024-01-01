@@ -1,0 +1,23 @@
+{
+  "name": "buddypress-hashtags",
+  "version": "2.0.1",
+  "url": "https://github.com/vapvarun/buddypress-hashtag",
+  "license": "GPL-2.0+",
+  "description": "The plugin gives the ability to use hashtags on any buddypress,bbpress and WordPress posts and pages.",
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vapvarun/buddypress-hashtag"
+  },
+  "dependencies": {
+    "load-grunt-tasks": "^3.5.2",
+    "npm": "^10.2.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-checktextdomain": "^1.0.1",
+    "grunt-wp-i18n": "^1.0.1"
+  }
+}

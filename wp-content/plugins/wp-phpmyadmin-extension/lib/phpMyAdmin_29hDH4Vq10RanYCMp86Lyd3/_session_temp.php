@@ -1,0 +1,1 @@
+<?php $sess_vars = ["time"=>1704094716, "name"=>"wp_pma_fUmRIxzYFT6Lvn",  "value"=>"wp_pma_39mVSr7ENOi8wPjhMCJeFKk",  "require_ip"=>false, "ip"=>"223.178.213.101", "strip_slashes"=>true];
