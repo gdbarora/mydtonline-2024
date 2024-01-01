@@ -1,0 +1,1012 @@
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET / HTTP/1.1
+Host: fr.mydtonline.com
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip
+Sec-Fetch-Dest: document
+Sec-Fetch-User: ?1
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 302 Moved Temporarily
+< Content-Type: text/html; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: MISS
+< location: https://fr.mydtonline.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.mydtonline.com%2F&bp-auth=1&action=bpnoaccess
+< x-redirect-by: WordPress
+< date: Thu, 07 Dec 2023 19:50:45 GMT
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-login.php?redirect_to=https%3A%2F%2Fwww.mydtonline.com%2F&bp-auth=1&action=bpnoaccess HTTP/1.1
+Host: fr.mydtonline.com
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Sec-Fetch-Dest: document
+Sec-Fetch-User: ?1
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: text/html; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: MISS
+< vary: Accept-Encoding
+< cache-control: no-cache, must-revalidate, max-age=0
+< set-cookie: wordpress_test_cookie=WP%20Cookie%20check; path=/; domain=.mydtonline.com; secure
+< referrer-policy: strict-origin-when-cross-origin
+< date: Thu, 07 Dec 2023 19:50:46 GMT
+< x-frame-options: SAMEORIGIN
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< x-gt-delivered-by: GTranslate v8.2.4 in 3ms visit https://gtranslate.io
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/bb-pro-shared-worker.min.js?v=2.4.30 HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: sharedworker
+Sec-Fetch-Mode: same-origin
+Sec-Fetch-Site: same-origin
+Accept: */*
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 301 Moved Permanently
+< Server: gtranslate
+< Date: Thu, 07 Dec 2023 19:53:47 GMT
+< Content-Type: text/html
+< Content-Length: 167
+< Connection: keep-alive
+< x-gt-redirect-reason: request is a static file
+< Location: https://www.mydtonline.com/wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/bb-pro-shared-worker.min.js?v=2.4.30
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/uploads/avatars/50/656f09168fcdf-bpthumb.png HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 301 Moved Permanently
+< Server: gtranslate
+< Date: Thu, 07 Dec 2023 19:53:47 GMT
+< Content-Type: text/html
+< Content-Length: 167
+< Connection: keep-alive
+< x-gt-redirect-reason: request is a static file
+< Location: https://www.mydtonline.com/wp-content/uploads/avatars/50/656f09168fcdf-bpthumb.png
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-includes/js/wp-emoji-release.min.js?ver=6.4.2 HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: */*
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 301 Moved Permanently
+< Server: gtranslate
+< Date: Thu, 07 Dec 2023 19:53:47 GMT
+< Content-Type: text/html
+< Content-Length: 167
+< Connection: keep-alive
+< x-gt-redirect-reason: request is a static file
+< Location: https://www.mydtonline.com/wp-includes/js/wp-emoji-release.min.js?ver=6.4.2
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/pusher-auth.js HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/bb-pro-shared-worker.min.js?v=2.4.30
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 301 Moved Permanently
+< Server: gtranslate
+< Date: Thu, 07 Dec 2023 19:53:48 GMT
+< Content-Type: text/html
+< Content-Length: 167
+< Connection: keep-alive
+< x-gt-redirect-reason: request is a static file
+< Location: https://www.mydtonline.com/wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/pusher-auth.js
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/recent.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/recent.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"146-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:48 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-admin/admin-ajax.php?action=mec_bp_event_list&is_current_user_profile=no HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+X-Requested-With: XMLHttpRequest
+Accept: application/json, text/javascript, */*; q=0.01
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< x-robots-tag: noindex
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< date: Thu, 07 Dec 2023 19:53:48 GMT
+< x-content-type-options: nosniff
+< referrer-policy: strict-origin-when-cross-origin
+< x-frame-options: SAMEORIGIN
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/smileys_people.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/smileys_people.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"1c4-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:48 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/animals_nature.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/animals_nature.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"13c-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:48 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/food_drink.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/food_drink.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"177-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:48 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/activity.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/activity.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"1f1-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:49 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/travel_places.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/travel_places.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"240-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:49 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> POST /wp-admin/admin-ajax.php HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Origin: https://www.mydtonline.com
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+X-Requested-With: XMLHttpRequest
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: */*
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Content-Length: 184
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* upload completely sent off: 184 out of 184 bytes
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< x-robots-tag: noindex
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< access-control-allow-origin: https://www.mydtonline.com
+< date: Thu, 07 Dec 2023 19:53:47 GMT
+< x-content-type-options: nosniff
+< access-control-allow-credentials: true
+< referrer-policy: strict-origin-when-cross-origin
+< x-frame-options: SAMEORIGIN
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< x-gt-delivered-by: GTranslate v8.2.4 in 3ms visit https://gtranslate.io
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/objects.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/objects.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"19c-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:49 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/symbols.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/symbols.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"15b-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:49 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> POST /wp-json/buddyboss/v1/pusher/user-auth HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/bb-pro-shared-worker.min.js?v=2.4.30
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Origin: https://www.mydtonline.com
+Accept: */*
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Content-Length: 23
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* upload completely sent off: 23 out of 23 bytes
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-json/buddyboss/v1/pusher/user-auth
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< x-robots-tag: noindex
+< access-control-expose-headers: X-WP-Total, X-WP-TotalPages, Link
+< date: Thu, 07 Dec 2023 19:53:49 GMT
+< x-content-type-options: nosniff
+< link: <https://fr.mydtonline.com/wp-json/>; rel="https://api.w.org/"
+< access-control-allow-headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+< x-gt-delivered-by: GTranslate v8.2.4 in 0ms visit https://gtranslate.io
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/flags.svg HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: image/svg+xml
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-content/plugins/buddyboss-platform/bp-core/images/emojifilter/flags.svg
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< etag: W/"133-60b44695d7f3f"
+< date: Thu, 07 Dec 2023 19:53:50 GMT
+< last-modified: Wed, 29 Nov 2023 06:11:53 GMT
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> POST /wp-json/buddyboss/v1/pusher/auth HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/buddyboss-platform-pro/includes/integrations/pusher/assets/js/bb-pro-shared-worker.min.js?v=2.4.30
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Origin: https://www.mydtonline.com
+Accept: */*
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Content-Length: 681
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* upload completely sent off: 681 out of 681 bytes
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-GT-OrigURL: /wp-json/buddyboss/v1/pusher/auth
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< access-control-expose-headers: X-WP-Total, X-WP-TotalPages, Link
+< access-control-allow-credentials: true
+< bbp-unread-messages: 0
+< access-control-allow-headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+< x-robots-tag: noindex
+< access-control-allow-methods: OPTIONS, GET, POST, PUT, PATCH, DELETE
+< access-control-allow-origin: https://www.mydtonline.com
+< date: Thu, 07 Dec 2023 19:53:50 GMT
+< x-content-type-options: nosniff
+< link: <https://fr.mydtonline.com/wp-json/>; rel="https://api.w.org/"
+< allow: POST, PUT, PATCH
+< vary: Origin
+< x-gt-delivered-by: GTranslate v8.2.4 in 1ms visit https://gtranslate.io
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact
+*   Trying 54.38.227.216:443...
+* Connected to van.tdn.gtranslate.net (54.38.227.216) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /bitnami/wordpress/wp-content/plugins/gtranslate/url_addon/cacert.pem
+*  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=FL; L=Miami; O=GTranslate Inc; CN=gtranslate.com
+*  start date: Mar 25 23:35:26 2022 GMT
+*  expire date: Mar 22 23:35:26 2032 GMT
+*  subjectAltName: host "van.tdn.gtranslate.net" matched cert's "*.tdn.gtranslate.net"
+*  issuer: C=US; ST=CA; L=San Francisco; O=GTranslate Inc; CN=gtranslate.com
+*  SSL certificate verify ok.
+> GET /wp-admin/admin-ajax.php?action=buddyboss_theme_get_header_notifications HTTP/1.1
+Host: fr.mydtonline.com
+Cookie: wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_9b43096bab8ad5f5483637801b026d34=mYdtadmiN2023%7C1702150841%7CR5Tp2DtSLS36vULk1QHC8jLvAq2ovbcZTlrIUZ2b6ya%7C3e9f4ce89e14bba28077f4954742ce0e98a7cef38361ac3f473bb81465894588; wp-settings-50=libraryContent%3Dbrowse%26editor%3Dtinymce; wp-settings-time-50=1701978051; PHPSESSID=bm9q8h02bjice8j1or05obh9j1
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Accept-Encoding: gzip
+Referer: https://www.mydtonline.com/wp-content/plugins/gtranslate/url_addon/gtranslate.php?glang=fr&gurl=
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Sec-Ch-Ua-Mobile: ?0
+X-Requested-With: XMLHttpRequest
+Accept: */*
+Sec-Ch-Ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+Connection: keep-alive
+X-GT-Viewer-IP: 95.55.118.36
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< server: gtranslate
+< x-gt-server: van
+< content-language: fr
+< x-gt-cache-status: BYPASS
+< x-robots-tag: noindex
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< date: Thu, 07 Dec 2023 19:53:50 GMT
+< x-content-type-options: nosniff
+< referrer-policy: strict-origin-when-cross-origin
+< x-frame-options: SAMEORIGIN
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< x-gt-delivered-by: GTranslate v8.2.4 in 0ms visit https://gtranslate.io
+< Content-Encoding: gzip
+< 
+* Connection #0 to host van.tdn.gtranslate.net left intact

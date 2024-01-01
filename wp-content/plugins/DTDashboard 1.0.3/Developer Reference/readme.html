@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DTDashboard Plugin Developer Reference</title>
+		<link rel="stylesheet" href="readme.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="readme.js"></script>
+	</head>
+
+	<body>
+		<h1>DTDashboard Plugin Developer Reference</h1>
+		<section>
+			<h2>DTDashboard - WordPress Plugin Overview</h2>
+
+			<h3>Plugin Information</h3>
+			<p>
+				<strong>Plugin Name:</strong> DTDashboard<br>
+				<strong>Plugin URI:</strong> <a href="https://www.statureit.com/">https://www.statureit.com/</a><br>
+				<strong>Description:</strong> This Plugin has some widgets that show statistics about the website.<br>
+				<strong>Version:</strong> 1.0.3<br>
+				<strong>Author:</strong> Stature IT<br>
+				<strong>Author URI:</strong> <a href="https://www.statureit.com/">https://www.statureit.com/</a><br>
+			</p>
+
+			<h3>Overview</h3>
+			<p>
+				The "DTDashboard" is a WordPress plugin developed by Stature IT. It provides various widgets for displaying
+				statistics and information about a website. The plugin is designed to enhance the WordPress dashboard by
+				adding widgets that offer insights into website performance and engagement.
+			</p>
+
+			<h3>Key Features</h3>
+			<ul>
+				<li>Adds a custom dashboard menu item called "DTDashboard" to the WordPress admin menu.</li>
+				<li>Enqueues necessary scripts and styles for rendering widgets and charts.</li>
+				<li>Registers multiple custom widgets that display different types of statistics and data.</li>
+				<li>Organizes and renders these widgets within the WordPress dashboard.</li>
+			</ul>
+
+			<h3>Widget Categories</h3>
+			<ul>
+				<li>Courses</li>
+				<li>Member Growth</li>
+				<li>Membership Status</li>
+				<li>Member Rank</li>
+				<li>Member Location</li>
+				<li>Member Languages</li>
+				<li>Groups</li>
+				<li>Posts With Most Engagement</li>
+				<li>Flagged Words</li>
+			</ul>
+
+			<h3>Purpose</h3>
+			<p>
+				The "DTDashboard" plugin aims to provide website administrators and content managers with valuable insights
+				into their website's performance and engagement. It offers a convenient way to access important statistics
+				and data directly from the WordPress dashboard.
+			</p>
+
+			<h3>Conclusion</h3>
+			<p>
+				This plugin enhances the WordPress experience by simplifying the process of accessing and visualizing
+				essential website data within the WordPress dashboard.
+			</p>
+		</section>
+		<section id="main">
+			<h2>Folder Structure</h2>
+			<pre>
+    DTDashboard/                   <!-- Main plugin folder -->
+    ├── <a href="#main-file">DTDashboard.php</a>           <!-- Main plugin file -->
+    ├── <a href="#widgets">Widgets.php</a>           <!-- Main plugin file -->
+    ├── <a href="#base-widget">Widgets/</a>                   <!-- Folder for widget files -->
+    │   ├── <a href="#base-widget">BaseWidget.php</a>        <!-- Base widget class -->
+    │   ├── <a href="#member-growth">MemberGrowth.php</a>      <!-- Member Growth widget -->
+    │   ├── <a href="#membership">Membership.php</a>        <!-- Membership widget -->
+    │   ├── <a href="#member-rank">MemberRank.php</a>        <!-- Member Rank widget -->
+    │   ├── <a href="#member-locations">MemberLocations.php</a>   <!-- Member Locations widget -->
+    │   ├── <a href="#member-languages">MemberLanguages.php</a>   <!-- Member Languages widget -->
+    │   ├── <a href="#groups">Groups.php</a>            <!-- Groups widget -->
+    │   ├── <a href="#most-engaged-post">MostEngagedPost.php</a>   <!-- Most Engaged Post widget -->
+    │   ├── <a href="#flagged-words">FlaggedWords.php</a>      <!-- Flagged Words widget -->
+    │   ├── <a href="#courses">Courses.php</a>           <!-- Courses widget -->
+    ├── <a href="#assets">Assets/</a>                    <!-- Folder for asset files -->
+    │   ├── <a href="#dt-script">DTScript.js</a>           <!-- JavaScript file -->
+    │   ├── <a href="#dt-styles">DTStyles.css</a>          <!-- CSS file -->
+    </pre>
+		</section>
+		<!-- Documentation for DTDashboard.php goes here -->
+		<section id="main-file">
+			<h2 id="main-file-heading">DTDashboard.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>DTDashboard.php</code> file is the main file of the DTDashboard plugin. It serves as the entry
+					point for the plugin and defines various actions and functions to create and render the DTDashboard in
+					the
+					WordPress admin area.
+				</p>
+
+				<h3>Plugin Information</h3>
+				<ul>
+					<li><strong>Plugin Name:</strong> DTDashboard</li>
+					<li><strong>Plugin URI:</strong> <a href="https://www.statureit.com/">https://www.statureit.com/</a>
+					</li>
+					<li><strong>Description:</strong> This Plugin has some widgets that show statistics about the website.
+					</li>
+					<li><strong>Version:</strong> 1.0.3</li>
+					<li><strong>Author:</strong> Stature IT</li>
+					<li><strong>Author URI:</strong> <a href="https://www.statureit.com/">https://www.statureit.com/</a>
+					</li>
+				</ul>
+
+				<h3>Key Functions and Actions</h3>
+				<ol>
+					<li>
+						<strong><code>add_action('admin_menu', 'create_dt_dashboard')</code></strong>
+						<ul>
+							<li>Description: Adds a menu page for the DTDashboard in the WordPress admin menu.</li>
+							<li>Callback: <code>create_dt_dashboard</code></li>
+						</ul>
+					</li>
+					<li>
+						<strong><code>add_action('admin_enqueue_scripts', 'enqueue_dt_dashboard_styles_and_scripts')</code></strong>
+						<ul>
+							<li>Description: Enqueues necessary scripts and styles for the DTDashboard.</li>
+							<li>Callback: <code>enqueue_dt_dashboard_styles_and_scripts</code></li>
+						</ul>
+					</li>
+					<li>
+						<strong><code>require_once plugin_dir_path(__FILE__) . 'Widgets.php'</code></strong>
+						<ul>
+							<li>Description: Includes the <code>Widgets.php</code> file, which registers and defines custom
+								widgets for the dashboard.</li>
+						</ul>
+					</li>
+					<li>
+						<strong><code>add_action('widgets_init', 'register_dt_widgets')</code></strong>
+						<ul>
+							<li>Description: Registers the custom widgets defined in the <code>Widgets.php</code> file.</li>
+							<li>Callback: <code>register_dt_widgets</code></li>
+						</ul>
+					</li>
+					<li>
+						<strong><code>function render_dt_dashboard()</code></strong>
+						<ul>
+							<li>Description: Renders the DTDashboard content in the WordPress admin area.</li>
+							<li>Content: The DTDashboard consists of various widgets that display statistics about the
+								website.
+								These widgets are organized into different columns on the dashboard.</li>
+						</ul>
+					</li>
+				</ol>
+
+				<h3>Dashboard Widgets</h3>
+				<p>
+					The DTDashboard plugin adds the following widgets to the WordPress admin dashboard:
+				</p>
+				<ul>
+					<li><code>Courses</code>: Displays information about courses.</li>
+					<li><code>Member Growth</code>: Shows statistics related to member growth.</li>
+					<li><code>Membership Status</code>: Displays membership status information.</li>
+					<li><code>Member Rank</code>: Provides information about member rankings.</li>
+					<li><code>Member Location</code>: Shows member locations on a map.</li>
+					<li><code>Member Languages</code>: Displays information about member languages.</li>
+					<li><code>Groups</code>: Provides information about groups.</li>
+					<li><code>Posts With Most Engagement</code>: Shows posts with the most engagement.</li>
+					<li><code>Flagged Words</code>: Displays flagged words.</li>
+				</ul>
+
+				<h3>Enqueued Scripts and Styles</h3>
+				<p>
+					The plugin enqueues the following external scripts and styles:
+				</p>
+				<ul>
+					<li><code>jquery</code> (Version 3.6.0): jQuery library.</li>
+					<li><code>chart-js</code> (Version 2.9.4): Chart.js library.</li>
+					<li><code>data-tables</code> (Version 1.13.6): DataTables library for tabular data.</li>
+					<li><code>buttons-js</code> (Version 2.4.1): DataTables Buttons extension JavaScript.</li>
+					<li><code>buttons-html5-js</code> (Version 2.4.1): DataTables Buttons HTML5 extension JavaScript.</li>
+					<li><code>jszip</code> (Version 3.1.3): JSZip library for DataTables Buttons.</li>
+					<li><code>printtable</code> (Version 2.4.2): DataTables Buttons Print extension JavaScript.</li>
+					<li><code>dt-dashboard-scripts</code> (Version 1.0.1): Custom JavaScript for the DTDashboard.</li>
+					<li><code>dt-dashboard-styles</code> (Version 1.0.1): Custom CSS styles for the DTDashboard.</li>
+				</ul>
+
+			</div>
+		</section>
+		<!-- Documentation for Widgets.php goes here -->
+		<section id="widgets">
+			<h2 id="widgets-heading">Widgets.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					This PHP file serves as a central repository for defining multiple widget classes used within a
+					WordPress
+					plugin. It consolidates these widget classes into a single file for organizational and maintainability
+					purposes. Each class represents a distinct widget designed to offer specific functionalities or display
+					particular types of information on the WordPress site.
+				</p>
+
+				<h3>Purpose</h3>
+				<p>
+					The primary purpose of this file is to centralize the management of widget classes, making it easier for
+					developers to maintain and extend the plugin's functionality. By grouping related widgets in a single
+					file,
+					it enhances code organization and readability.
+				</p>
+
+				<h3>Advantages</h3>
+				<ul>
+					<li>
+						<strong>Modularity:</strong> Keeping widget classes in one file promotes modularity, allowing
+						developers
+						to add, modify, or remove widgets with ease.
+					</li>
+					<li>
+						<strong>Organization:</strong> It helps in organizing the codebase, especially when dealing with
+						numerous widgets in a complex plugin.
+					</li>
+					<li>
+						<strong>Maintainability:</strong> Centralizing widget classes simplifies maintenance tasks, such as
+						bug
+						fixes and updates.
+					</li>
+					<li>
+						<strong>Code Reusability:</strong> Developers can reuse these widget classes across different
+						sections
+						of the plugin or even in other projects.
+					</li>
+				</ul>
+
+				<h3>Usage</h3>
+				<p>
+					To utilize these widget classes, they are typically instantiated within the WordPress plugin. Each
+					widget
+					class may define its unique set of functionalities and data presentation tailored to the specific needs
+					of
+					the plugin.
+				</p>
+
+				<h3>Further Details</h3>
+				<p>
+					For detailed information about individual widget classes and their functionalities, refer to the
+					respective
+					class definitions within this document.
+				</p>
+			</div>
+		</section>
+		<!-- Documentation for Courses.php goes here -->
+		<section id="base-widget">
+			<h2 id="base-widget-heading">BaseWidget.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Base_DT_Widget</code> abstract class serves as the foundation for creating custom widgets in
+					the
+					DTDashboard plugin. It extends the <code>WP_Widget</code> class and provides common functionality and
+					AJAX
+					callbacks for widgets.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of <code>Base_DT_Widget</code> initializes the widget with essential parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Actions</h3>
+				<p>
+					The <code>Base_DT_Widget</code> class defines several AJAX actions that can be used by widgets for
+					handling
+					asynchronous requests.
+				</p>
+				<ul>
+					<li><code>table_content()</code>: Handles AJAX requests for table content.</li>
+					<li><code>widget_content()</code>: Handles AJAX requests for widget content.</li>
+				</ul>
+
+				<h3>Widget Method</h3>
+				<p>
+					The <code>widget()</code> method is responsible for rendering the widget's content in the WordPress
+					admin
+					area.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$args</code>: Widget arguments and container details.</li>
+							<li><code>$instance</code>: Widget instance settings.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Abstract Method</h3>
+				<p>
+					The <code>Base_DT_Widget</code> class defines an abstract method <code>initial_widget_content()</code>
+					that
+					should be implemented by child widgets. This method is used to render the initial content of the widget.
+				</p>
+
+				<h3>Utility Methods</h3>
+				<p>
+					The class provides utility methods to sanitize and retrieve widget instances.
+				</p>
+				<ul>
+					<li><code>get_widget_instance_by_id($widget_id)</code>: Retrieves a widget instance by its ID.</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for MemberGrowth.php goes here -->
+		<section id="courses">
+			<h2 id="courses-heading">Courses.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Courses</code> class is a custom widget class that extends the <code>Base_DT_Widget</code>
+					class.
+					It is designed to display statistics about courses in the DTDashboard plugin. This widget calculates and
+					displays data about course completion times, creation dates, and user counts.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Courses</code> class initializes the widget with the necessary parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Courses</code> class defines several methods for rendering widget content and retrieving data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This abstract method is used to render the initial content of
+						the
+						widget. Child classes should implement this method.</li>
+					<li><code>getWidgetContent()</code>: Generates and returns HTML content for the widget, including course
+						statistics for different time periods.</li>
+					<li><code>generateCourseList($data)</code>: Generates HTML for displaying a list of courses with
+						completion
+						times, including the top 3 fastest and slowest completion times.</li>
+					<li><code>getTableData()</code>: Generates an HTML table with course statistics, including course name,
+						average completion time, creation date, completed user count, and in-progress user count.</li>
+					<li><code>getData($start_date, $end_date)</code>: Retrieves course data from the database, including
+						completion times, creation dates, completed user counts, and in-progress user counts.</li>
+				</ul>
+
+				<h3>Developer Notes</h3>
+				<p>
+					The <code>Courses</code> class provides a structured way to create a widget that displays course
+					statistics
+					in the DTDashboard plugin. Developers can extend this class and implement the
+					<code>initial_widget_content()</code> method to customize the widget's appearance and behavior.
+				</p>
+			</div>
+		</section>
+		<!-- Documentation for FlaggedWords.php goes here -->
+		<section id="flagged-words">
+			<h2 id="flagged-words-heading">FlaggedWords.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Flagged_Words</code> class is a custom widget class that extends the
+					<code>Base_DT_Widget</code>
+					class. It is designed to display statistics about flagged words or keywords. This widget calculates and
+					displays data about the top flagged keywords for the month and week.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Flagged_Words</code> class initializes the widget with the necessary
+					parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Flagged_Words</code> class defines several methods for rendering widget content and retrieving
+					data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This abstract method is used to render the initial content of
+						the
+						widget. Child classes should implement this method.</li>
+					<li><code>getWidgetContent()</code>: Generates and returns HTML content for the widget, including the
+						top
+						flagged keywords for the month and week.</li>
+					<li><code>calculateTopKeywords()</code>: Calculates the top flagged keywords for both the month and
+						week.
+					</li>
+					<li><code>processFlaggedWordsData($data)</code>: Processes and generates HTML for flagged words data.
+					</li>
+					<li><code>generateFlaggedWordsHtml($flaggedWords, $title)</code>: Generates HTML for displaying the top
+						flagged words.</li>
+					<li><code>getTableData()</code>: Generates an HTML table with flagged words data, including flagged
+						word,
+						post link, author, location, and post date.</li>
+					<li><code>get_wbbprof_settings()</code>: Retrieves flagged words or keywords settings from the database.
+					</li>
+					<li><code>search_activity_by_keywords($keyword)</code>: Searches for flagged keywords in activity
+						content
+						and retrieves relevant data.</li>
+					<li><code>search_messages_by_keyword($keyword)</code>: Searches for flagged keywords in messages and
+						retrieves relevant data.</li>
+					<li><code>count_keyword_occurrences($keyword, $time_period = 'month')</code>: Counts keyword occurrences
+						for
+						a specified time period.</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for Groups.php goes here -->
+		<section id="groups">
+			<h2 id="groups-heading">Groups.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Groups</code> class is a custom widget class that extends the <code>Base_DT_Widget</code>
+					class.
+					It is designed to display statistics about groups, including group population, active members, and more.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Groups</code> class initializes the widget with the necessary parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Groups</code> class defines several methods for rendering widget content and retrieving data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This abstract method is used to render the initial content of
+						the
+						widget. Child classes should implement this method.</li>
+					<li><code>getData()</code>: Fetches data about groups, including group ID, group name, population,
+						active
+						members, and more.</li>
+					<li><code>getTableData()</code>: Generates an HTML table with group data, including group ID, group
+						name,
+						population, active members, and more.</li>
+					<li><code>getWidgetContent()</code>: Generates and returns HTML content for the widget, including the
+						top 5
+						largest, smallest, busiest, and quietest groups.</li>
+					<li><code>generateGroupHtml($groups, $title)</code>: Generates HTML for displaying groups, including
+						group
+						ID, group name, population, and active members.</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for MemberGrowth.php goes here -->
+		<section id="member-growth">
+			<h2 id="member-growth-heading">MemberGrowth.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Member_Growth</code> class is a custom widget class that extends the
+					<code>Base_DT_Widget</code>
+					class. It is designed to display statistics about member growth, including profiles created and
+					terminated
+					on a monthly basis.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Member_Growth</code> class initializes the widget with the necessary
+					parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Member_Growth</code> class defines several methods for rendering widget content and retrieving
+					data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This method is used to render the initial content of the
+						widget,
+						which includes a dropdown for selecting the year.</li>
+					<li><code>getWidgetContent($selectedYear)</code>: Generates and returns HTML content for the widget,
+						including a chart showing profiles created and terminated on a monthly basis.</li>
+					<li><code>getData($selectedYear)</code>: Fetches data for the selected year, including profiles created
+						and
+						terminated on a monthly basis.</li>
+					<li><code>getTableData($selectedYear)</code>: Generates an HTML table with data for profiles created and
+						terminated on a monthly basis for the selected year and the previous year.</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for MemberLanguages.php goes here -->
+		<section id="member-languages">
+			<h2 id="member-languages-heading">MemberLanguages.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Member_Languages</code> class is a custom widget class that extends the
+					<code>Base_DT_Widget</code> class. It is designed to display information about members' languages,
+					including
+					their registration dates, names, statuses, ranks, countries, and selected primary languages.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Member_Languages</code> class initializes the widget with the necessary
+					parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Member_Languages</code> class defines several methods for rendering widget content and
+					retrieving
+					data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This method is used to render the initial content of the
+						widget,
+						including date range inputs.</li>
+					<li><code>getData($selectedYear = null, $fromDate = null, $toDate = null)</code>: Fetches data about
+						members' languages, registration dates, names, statuses, ranks, countries, and selected primary
+						languages. The data can be filtered by a selected year and date range.</li>
+					<li><code>getTableData($selectedYear = null, $fromDate = null, $toDate = null)</code>: Generates an HTML
+						table with the retrieved data, including registration dates, names, statuses, ranks, countries, and
+						selected primary languages. The table can be filtered by a selected year and date range.</li>
+					<li><code>getWidgetContent()</code>: Retrieves data using the <code>getData</code> method, counts the
+						number
+						of members for each language, and displays the top 5 languages and their member counts in an HTML
+						table.
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for MemberLocations.php goes here -->
+		<section id="member-locations">
+			<h2 id="member-locations-heading">MemberLocations.php</h2>
+			<div class="content closed">
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Member_Location</code> class initializes the widget with the necessary
+					parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Member_Location</code> class defines several methods for rendering widget content and
+					retrieving
+					data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This method is used to render the initial content of the
+						widget,
+						including date range inputs.</li>
+					<li><code>getData($selectedYear = null, $fromDate = null, $toDate = null)</code>: Fetches data about
+						members' locations, registration dates, names, statuses, ranks, cities, provinces/states, and
+						countries.
+						The data can be filtered by a selected year and date range.</li>
+					<li><code>getTableData($selectedYear = null, $fromDate = null, $toDate = null)</code>: Generates an HTML
+						table with the retrieved data, including registration dates, names, statuses, ranks, cities,
+						provinces/states, and countries. The table can be filtered by a selected year and date range.</li>
+					<li><code>getWidgetContent()</code>: Retrieves data using the <code>getData</code> method, counts the
+						number
+						of members by country, and displays the top 5 countries and their member counts in an HTML table.
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for MemberRank.php goes here -->
+		<section id="member-rank">
+			<h2 id="member-rank-heading">MemberRank.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Member_Rank</code> class is a custom widget class that extends the <code>Base_DT_Widget</code>
+					class. It is designed to display information about members' ranks, including their registration dates,
+					distributorship duration, first names, last names, statuses, and countries.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Member_Rank</code> class initializes the widget with the necessary
+					parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Member_Rank</code> class defines several methods for rendering widget content and retrieving
+					data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This method is used to render the initial content of the
+						widget,
+						although it is not implemented in this class.</li>
+					<li><code>getData()</code>: Fetches data about members' ranks, including registration dates,
+						distributorship
+						duration, first names, last names, statuses, and countries.</li>
+					<li><code>getTableData()</code>: Generates an HTML table with the retrieved data, including registration
+						dates, distributorship duration, first names, last names, ranks, statuses, and countries.</li>
+					<li><code>getWidgetContent()</code>: Retrieves data using the <code>getData</code> method, counts the
+						number
+						of members by rank (excluding a specified value), and displays the ranks and their member counts in
+						an
+						HTML table.</li>
+					<li><code>getRankWidgetHtml($rankCounts)</code>: A helper function to generate HTML content for the rank
+						widget.</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for Membership.php goes here -->
+		<section id="membership">
+			<h2 id="membership-heading">Membership.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Membership_Status</code> class is a custom widget class that extends the
+					<code>Base_DT_Widget</code> class. It is designed to display information about the membership status of
+					users, including active, inactive, and banned users count, along with their registration dates, first
+					names,
+					last names, ranks, and countries.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Membership_Status</code> class initializes the widget with the necessary
+					parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Membership_Status</code> class defines several methods for rendering widget content and
+					retrieving
+					data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This method is used to render the initial content of the
+						widget,
+						although it is not implemented in this class.</li>
+					<li><code>getData()</code>: Fetches data about users' membership status, including registration dates,
+						first
+						names, last names, statuses, ranks, and countries.</li>
+					<li><code>getTableData()</code>: Generates an HTML table with the retrieved data, including registration
+						dates, first names, last names, statuses, ranks, and countries.</li>
+					<li><code>getWidgetContent()</code>: Retrieves data using the <code>getData</code> method, counts the
+						number
+						of active and inactive users, fetches banned users count, and displays this information in an HTML
+						chart
+						and text.</li>
+					<li><code>getInvitedUsersCount()</code>: Retrieves data using the <code>WP_Query</code> method to count the
+						number of user invites that have not yet been registered.</li>
+
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for MostEngagedPost.php goes here -->
+		<section id="most-engaged-post">
+			<h2 id="most-engaged-post-heading">MostEngagedPost.php</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The <code>Posts_With_Most_Engagement</code> class is a custom widget class that extends the
+					<code>Base_DT_Widget</code> class. It is designed to display posts with the most engagement, including
+					post
+					ID, location, post date, author, post content, reactions, and comments. The widget provides information
+					on
+					top posts for both this week and all time.
+				</p>
+
+				<h3>Constructor</h3>
+				<p>
+					The constructor of the <code>Posts_With_Most_Engagement</code> class initializes the widget with the
+					necessary parameters.
+				</p>
+				<ul>
+					<li><strong>Parameters:</strong>
+						<ul>
+							<li><code>$widget_id</code>: Unique ID for the widget.</li>
+							<li><code>$widget_name</code>: Name of the widget.</li>
+							<li><code>$widget_description</code>: Description of the widget.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Widget Methods</h3>
+				<p>
+					The <code>Posts_With_Most_Engagement</code> class defines several methods for rendering widget content
+					and
+					retrieving data:
+				</p>
+				<ul>
+					<li><code>initial_widget_content()</code>: This method is used to render the initial content of the
+						widget,
+						although it is not implemented in this class.</li>
+					<li><code>getData()</code>: Fetches data about posts with engagement, including post ID, location, post
+						date, author, post content, reactions, and comments, for both this week and all time.</li>
+					<li><code>getTableData()</code>: Generates an HTML table with the retrieved data, including post ID,
+						location, post date, author, post content, reactions, and comments.</li>
+					<li><code>getWidgetContent()</code>: Retrieves data using the <code>getData</code> method, sorts and
+						extracts the top posts for this week and all time, and generates HTML for displaying them.</li>
+					<li><code>generatePostHtml()</code>: A helper function used to generate HTML for displaying top posts
+						with
+						engagement.</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Documentation for DTScript.js goes here -->
+		<section id="dt-script">
+			<h2 id="dt-script-heading">DTScript.js</h2>
+
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The provided JavaScript code defines custom functionality for WordPress widgets within the admin
+					dashboard.
+					It allows users to interact with widgets in various ways, such as clicking on widget headers to create
+					popups and toggling panel visibility.
+				</p>
+
+				<h3>Functions and Methods</h3>
+
+				<h4><code>createPopup(widgetTitle, sortby = null, order = null)</code></h4>
+				<p>
+					Creates a popup for a widget when a widget header is clicked. The popup contains specific content
+					related to
+					the widget and its controls.
+				</p>
+				<ul>
+					<li><code>widgetTitle</code>: The title of the widget for which the popup is created.</li>
+					<li><code>sortby</code>: Optional sorting parameter for table data.</li>
+					<li><code>order</code>: Optional order parameter for table data sorting.</li>
+				</ul>
+
+				<h4><code>createFields(widgetTitle, container, tableContainer, sortby = null, order = null)</code></h4>
+				<p>
+					Dynamically creates input fields and controls within a widget popup based on the widget's title. This
+					function is used to customize the popup content for different widget types.
+				</p>
+				<ul>
+					<li><code>widgetTitle</code>: The title of the widget for which fields are created.</li>
+					<li><code>container</code>: The container element to which fields and controls are appended.</li>
+					<li><code>tableContainer</code>: The container element for the data table.</li>
+					<li><code>sortby</code>: Optional sorting parameter for table data.</li>
+					<li><code>order</code>: Optional order parameter for table data sorting.</li>
+				</ul>
+
+				<h4><code>createTable(widgetTitle, container, selectedYear = null, sortby = null, order = null)</code></h4>
+				<p>
+					Creates an AJAX request to retrieve data and generates a data table within a widget popup. The content
+					and
+					structure of the table depend on the widget type and parameters.
+				</p>
+				<ul>
+					<li><code>widgetTitle</code>: The title of the widget for which the table is created.</li>
+					<li><code>container</code>: The container element in which the table is appended.</li>
+					<li><code>selectedYear</code>: Optional selected year parameter for data filtering.</li>
+					<li><code>sortby</code>: Optional sorting parameter for table data.</li>
+					<li><code>order</code>: Optional order parameter for table data sorting.</li>
+				</ul>
+
+				<h4><code>updateTable(widgetTitle, container, selectedYear = undefined, fromDate = undefined, toDate = undefined)</code>
+				</h4>
+				<p>
+					Updates the data table within a widget popup based on user interactions, such as selecting a year or
+					date
+					range. Performs an AJAX request to fetch updated data and refreshes the table.
+				</p>
+				<ul>
+					<li><code>widgetTitle</code>: The title of the widget for which the table is updated.</li>
+					<li><code>container</code>: The container element containing the table to be updated.</li>
+					<li><code>selectedYear</code>: Optional selected year parameter for data filtering.</li>
+					<li><code>fromDate</code>: Optional "From" date parameter for data filtering.</li>
+					<li><code>toDate</code>: Optional "To" date parameter for data filtering.</li>
+				</ul>
+
+				<h4><code>updateWidgetData(postbox)</code></h4>
+				<p>
+					Updates widget data within a postbox element, including the ability to select a year and retrieve new
+					data
+					based on user interactions.
+				</p>
+				<ul>
+					<li><code>postbox</code>: The postbox element containing the widget to be updated.</li>
+				</ul>
+
+				<h4><code>performAjaxRequest(selectedYear)</code></h4>
+				<p>
+					Performs an AJAX request to fetch widget content data based on the selected year and updates the widget
+					content accordingly.
+				</p>
+				<ul>
+					<li><code>selectedYear</code>: The selected year for data filtering.</li>
+				</ul>
+
+				<h4><code>generatePostHtml()</code></h4>
+				<p>
+					A helper function used to generate HTML for displaying top posts with engagement.
+				</p>
+
+				<h4><code>togglePanelVisibility()</code></h4>
+				<p>
+					Toggles the visibility of a widget panel when the "Toggle panel" icon is clicked.
+				</p>
+			</div>
+		</section>
+
+		<!-- Documentation for DTStyles.php goes here -->
+		<section id="dt-styles">
+			<h2 id="dt-styles-heading">DTStyles.css</h2>
+			<div class="content closed">
+				<h3>Overview</h3>
+				<p>
+					The style file, often named "style.css" or similar, is an essential component of a WordPress plugin. It
+					is
+					responsible for defining the plugin's visual appearance, including its layout, colors, typography, and
+					overall styling. This file ensures that the plugin's user interface integrates seamlessly with the
+					WordPress
+					theme while providing a consistent and appealing user experience.
+				</p>
+
+				<h3>Purpose</h3>
+				<p>
+					The primary purpose of the plugin style file is to control the presentation of the plugin's elements and
+					widgets within the WordPress site. It enhances the user interface by applying a cohesive design that
+					aligns
+					with the plugin's functionality and branding.
+				</p>
+
+				<h3>Key Functions</h3>
+				<ul>
+					<li>
+						<strong>Styling Widgets:</strong> The style file defines the appearance of plugin widgets, ensuring
+						they
+						blend seamlessly with the site's overall design.
+					</li>
+					<li>
+						<strong>Responsive Design:</strong> It may implement responsive design principles to adapt the
+						plugin's
+						interface to different screen sizes and devices.
+					</li>
+					<li>
+						<strong>Customization:</strong> The file often includes customization options, allowing users to
+						modify
+						certain aspects of the plugin's appearance, such as color schemes or font choices.
+					</li>
+					<li>
+						<strong>Compatibility:</strong> The styles defined in this file are typically designed to work well
+						with
+						a wide range of WordPress themes and configurations.
+					</li>
+				</ul>
+
+				<h3>Usage</h3>
+				<p>
+					The plugin style file is automatically loaded and applied when the plugin is active on a WordPress site.
+					It
+					complements the plugin's functionality by providing an attractive and user-friendly interface.
+				</p>
+
+				<h3>Customization</h3>
+				<p>
+					Depending on the plugin's design, users and developers may have the option to customize the styles
+					through
+					settings or hooks, allowing for a more tailored appearance.
+				</p>
+
+				<h3>Further Details</h3>
+				<p>
+					For specific details on the styling rules and classes defined in the style file, developers can refer to
+					the
+					content of the file itself, which includes CSS rules and comments explaining their usage.
+				</p>
+			</div>
+		</section>
+
+	</body>
+
+</html>

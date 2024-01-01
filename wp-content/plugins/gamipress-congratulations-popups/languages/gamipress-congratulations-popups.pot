@@ -1,0 +1,417 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress Congratulations Popups\n"
+"Report-Msgid-Bugs-To: https://gamipress.com/\n"
+"POT-Creation-Date: 2022-07-25 09:05+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://gamipress.com/)\n"
+"Language-Team: GamiPress <contact@gamipress.com>\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: gamipress-congratulations-popups.php:141
+#, php-format
+msgid "GamiPress - Congratulations Popups requires %s (%s or higher) in order to work. Please install and activate it."
+msgstr ""
+
+#: includes/admin.php:23 includes/admin.php:71 includes/custom-tables.php:25
+#: includes/custom-tables.php:33
+msgid "Congratulations Popups"
+msgstr ""
+
+#: includes/admin.php:44
+msgid "GamiPress Congratulations Popups"
+msgstr ""
+
+#: includes/admin.php:47
+msgid "License"
+msgstr ""
+
+#: includes/ajax-functions.php:70
+msgid "Done"
+msgstr ""
+
+#: includes/congratulations-popups.php:21
+msgid "Active"
+msgstr ""
+
+#: includes/congratulations-popups.php:22
+msgid "Inactive"
+msgstr ""
+
+#: includes/congratulations-popups.php:37
+msgid "None"
+msgstr ""
+
+#: includes/congratulations-popups.php:38
+msgid "Confetti fireworks"
+msgstr ""
+
+#: includes/congratulations-popups.php:39
+msgid "Confetti"
+msgstr ""
+
+#: includes/congratulations-popups.php:40
+msgid "Stars"
+msgstr ""
+
+#: includes/congratulations-popups.php:41
+msgid "Bubbles"
+msgstr ""
+
+#: includes/congratulations-popups.php:56
+msgid "Reach a points balance"
+msgstr ""
+
+#: includes/congratulations-popups.php:57
+msgid "Unlock a specific achievement"
+msgstr ""
+
+#: includes/congratulations-popups.php:58
+msgid "Unlock any achievement of type"
+msgstr ""
+
+#: includes/congratulations-popups.php:59
+msgid "Unlock all achievements of type"
+msgstr ""
+
+#: includes/congratulations-popups.php:60
+msgid "Reach a specific rank"
+msgstr ""
+
+#: includes/custom-tables.php:24
+msgid "Congratulations Popup"
+msgstr ""
+
+#: includes/custom-tables.php:71
+msgid "Congratulations Popup Display"
+msgstr ""
+
+#: includes/custom-tables.php:72
+msgid "Congratulations Popup Displays"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:40
+#: includes/custom-tables/congratulations-popups.php:172
+#: includes/custom-tables/congratulations-popups.php:176
+#: includes/custom-tables/congratulations-popups.php:208
+msgid "Title"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:41
+msgid "Display Effect"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:42
+msgid "Max. Displays"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:43
+msgid "Max. Displays Per User"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:44
+#: includes/custom-tables/congratulations-popups.php:365
+msgid "Status"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:45
+#: includes/custom-tables/congratulations-popups.php:370
+msgid "Date"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:108
+#, php-format
+msgid "Unlimited (%d displays)"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:117
+msgid "Unlimited"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:179
+msgid "Enter title here"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:204
+msgid "Popup Configuration"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:210
+msgid "Popup title (leave blank to hide it). For a list available tags, check next field description."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:213
+msgid "Content"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:214
+msgid "Popup content. Available tags:"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:227
+msgid "Popup Style &amp; Sound Effects"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:233
+msgid "Display effect"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:234
+msgid "Set the display effect of the popup."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:239
+msgid "Particles Color"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:240
+msgid "Set the color of the effect particles. If you leave this setting empty, the default colors will be:"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:241
+msgid "Confetti fireworks and Confetti:"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:241
+msgid "Random colors."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:242
+msgid "Stars:"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:243
+msgid "Bubbles:"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:253
+msgid "Popup sample!"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:254
+msgid "Click the preview button to see the effect in action."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:258
+msgid "Preview"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:264
+msgid "Show popup sound effect"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:265
+msgid "Upload, choose or paste the URL of the popup sound to play when this popup gets displayed."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:268
+#: includes/custom-tables/congratulations-popups.php:277
+msgid "Add or Upload Audio"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:273
+msgid "Hide popup sound effect"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:274
+msgid "Upload, choose or paste the URL of the popup sound to play when this popup gets hidden."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:285
+msgid "Background Color"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:286
+msgid "Set the popup background color."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:291
+msgid "Title Color"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:292
+msgid "Set the text color of the popup title."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:297
+msgid "Text Color"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:298
+msgid "Set the text color of the popup content."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:311
+msgid "Condition Configuration"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:315
+msgid "Condition"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:320
+msgid "Points"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:324
+msgid "Achievement Type"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:331
+msgid "Achievement"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:336
+msgid "Select an achievement"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:342
+msgid "Rank"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:347
+msgid "Select a rank"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:361
+msgid "Details"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:371
+msgid "Enter the popup creation date. This field is important since first popup will be displayed <strong>after</strong> date selected."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:375
+msgid "Maximum Displays"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:376
+msgid "Maximum number of times that this popup will be displayed (set 0 for no maximum)."
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:384
+msgid "Maximum Displays Per User"
+msgstr ""
+
+#: includes/custom-tables/congratulations-popups.php:385
+msgid "Maximum number of times per user that this popup will be displayed (set 0 for no maximum)."
+msgstr ""
+
+#: includes/template-functions.php:43
+msgid "User Tags"
+msgstr ""
+
+#: includes/template-functions.php:46
+msgid "User display name."
+msgstr ""
+
+#: includes/template-functions.php:47
+msgid "User first name."
+msgstr ""
+
+#: includes/template-functions.php:48
+msgid "User last name."
+msgstr ""
+
+#: includes/template-functions.php:49
+msgid "User ID (useful for shortcodes that user ID can be passed as attribute)."
+msgstr ""
+
+#: includes/template-functions.php:53
+msgid "Points Types Tags"
+msgstr ""
+
+#: includes/template-functions.php:57
+#, php-format
+msgid "User %s balance."
+msgstr ""
+
+#: includes/template-functions.php:58
+#, php-format
+msgid "%s label. Singular or plural is based on user balance."
+msgstr ""
+
+#: includes/template-functions.php:63
+msgid "Achievement Types Tags"
+msgstr ""
+
+#: includes/template-functions.php:68
+#, php-format
+msgid "ID of last %s ID user has earned."
+msgstr ""
+
+#: includes/template-functions.php:69
+#, php-format
+msgid "Title of last %s user has earned."
+msgstr ""
+
+#: includes/template-functions.php:70
+#, php-format
+msgid "URL to the last %s user has earned."
+msgstr ""
+
+#: includes/template-functions.php:71
+#, php-format
+msgid "Link to the last %s user has earned with the title as text."
+msgstr ""
+
+#: includes/template-functions.php:72
+#, php-format
+msgid "Excerpt of last %s user has earned."
+msgstr ""
+
+#: includes/template-functions.php:73
+#, php-format
+msgid "Featured image of last %s user has earned."
+msgstr ""
+
+#: includes/template-functions.php:74
+#, php-format
+msgid "Congratulations text of last %s user has earned."
+msgstr ""
+
+#: includes/template-functions.php:78
+msgid "Rank Types Tags"
+msgstr ""
+
+#: includes/template-functions.php:83
+#, php-format
+msgid "ID of user %s."
+msgstr ""
+
+#: includes/template-functions.php:84
+#, php-format
+msgid "Title of user %s."
+msgstr ""
+
+#: includes/template-functions.php:85
+#, php-format
+msgid "URL to the user %s."
+msgstr ""
+
+#: includes/template-functions.php:86
+#, php-format
+msgid "Link to the user %s with the title as text."
+msgstr ""
+
+#: includes/template-functions.php:87
+#, php-format
+msgid "Excerpt of user %s."
+msgstr ""
+
+#: includes/template-functions.php:88
+#, php-format
+msgid "Featured image of user %s."
+msgstr ""

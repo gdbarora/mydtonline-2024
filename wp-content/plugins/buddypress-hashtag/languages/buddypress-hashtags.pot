@@ -1,0 +1,1079 @@
+# Copyright (C) 2023
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-03 11:05:51+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Varun Dubey\n"
+"Language-Team: Wbcom Designs\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: admin/class-buddypress-hashtags-admin.php:107
+msgid "Please wait"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:132
+msgid "WB Plugins"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:133
+#: admin/class-buddypress-hashtags-admin.php:165
+msgid "General"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:135
+msgid "BuddyPress Hashtags Setting Page"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:135
+#: admin/class-buddypress-hashtags-admin.php:153
+msgid "BuddyPress Hashtag"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:155
+#. translators: %s:
+msgid "Version %s"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:164
+msgid "Welcome"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:166
+#: admin/inc/bpht-hashtag-delete-tab.php:31
+msgid "Hashtag Index"
+msgstr ""
+
+#: admin/class-buddypress-hashtags-admin.php:167
+msgid "Shortcodes"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:45
+msgid "Search hashtag:"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:47
+msgid "Search hashtag"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:52
+msgid ""
+"** Warning: If you delete a hashtag, any BuddyPress activities that contain "
+"the hashtag you deleted will also be deleted."
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:57
+msgid "Hashtag"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:58
+msgid "Count"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:59
+msgid "Type"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:60
+#: admin/wbcom/templates/wbcom-license-page.php:27
+#: admin/wbcom/templates/wbcom-license-page.php:39
+#: edd-license/edd-plugin-license.php:376
+msgid "Action"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:73
+msgid "Delete"
+msgstr ""
+
+#: admin/inc/bpht-hashtag-delete-tab.php:79
+msgid "No hashtag found."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:28
+msgid "General Setting"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:29 admin/inc/bpht-welcome-page.php:25
+msgid "Documentation"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:40
+msgid "Allow Unicode Characters"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:41
+msgid ""
+"Unicode encompasses a vast set of characters, including letters, numbers, "
+"symbols, and emojis from different languages and scripts."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:42
+msgid ""
+"Note: The setting currently enabled does not allow for minimum and maximum "
+"hashtag length restrictions to be applied."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:53
+msgid "Minimum hashtag length"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:54
+msgid ""
+"A hashtag should be at least three to four characters for effectiveness and "
+"recognition."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:57
+msgid "set minimum hashtag length"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:62
+msgid "Maximum hashtag length"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:63
+msgid ""
+"When using hashtags, whether or not to limit their length depends on your "
+"goals."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:66
+msgid "set maximum hashtag length"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:72
+msgid "Delete Hashtag Index Table"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:73
+msgid ""
+"We store hashtag counts in a separate table. To reset the index table, use "
+"this option. It removes the hashtag counts without deleting activities."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:76
+msgid "Reset Hashtag Index"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:112
+msgid "Disable Hashtag on bbPress?"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:113
+msgid "Turn off the hashtags link on topics and replies."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:125
+msgid "Disable Hashtag on Blog Posts?"
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:126
+msgid "Turn off the hashtags link on posts and pages."
+msgstr ""
+
+#: admin/inc/bpht-setting-general-tab.php:138
+msgid "Disable Follow Hashtags"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:11
+msgid "Available shortcodes"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:18
+#: admin/wbcom/templates/wbcom-plugins-page.php:272 buddypress-hashtags.php:179
+#: public/class-bpht-hastags-wdget.php:9
+msgid "BuddyPress Hashtags"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:25
+#: admin/inc/bpht-setting-shortcodes.php:45
+msgid "For eg."
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:25
+msgid ""
+"[bpht_bp_hashtags displaystyle=\"cloud\" sortby=\"name\" sortorder=\"asc\" "
+"limit=\"12\"]"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:27
+#: admin/inc/bpht-setting-shortcodes.php:47
+msgid "Values accepted by parameters"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:28
+#: admin/inc/bpht-setting-shortcodes.php:48
+msgid "{displaystyle} - cloud/list"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:29
+#: admin/inc/bpht-setting-shortcodes.php:49
+msgid "{sortby} - name/size"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:30
+#: admin/inc/bpht-setting-shortcodes.php:50
+msgid "{sortorder} - asc/desc"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:31
+#: admin/inc/bpht-setting-shortcodes.php:51
+msgid "{limit} - any numeric value"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:38
+#: public/class-bpht-bbpress-hastags-wdget.php:9
+#: public/class-bpht-bbpress-hastags-wdget.php:236
+msgid "bbPress Hashtags"
+msgstr ""
+
+#: admin/inc/bpht-setting-shortcodes.php:45
+msgid ""
+"[bpht_bbpress_hashtags displaystyle=\"cloud\" sortby=\"name\" "
+"sortorder=\"asc\" limit=\"12\"]"
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:15
+msgid ""
+"Hashtags are a powerful tool for increasing content discoverability and "
+"audience engagement on social media platforms. BuddyPress Hashtag lets "
+"members create custom hashtags for campaigns or events, like "
+"#NewProductLaunch."
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:19
+msgid "Help &amp; Support Resources"
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:20
+msgid ""
+"Here are all the resources you may need to get help from us. Documentation "
+"is usually the best place to start. Should you require help anytime, our "
+"customer care team is available to assist you at the support center."
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:26
+msgid ""
+"We have prepared an extensive guide on BuddyPress Hashtags to learn all "
+"aspects of the plugin. You will find most of your answers here."
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:27
+msgid "Read Documentation"
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:33
+msgid "Support Center"
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:34
+msgid ""
+"We strive to offer the best customer care via our support center. Once your "
+"theme is activated, you can ask us for help anytime."
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:35
+msgid "Get Support"
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:40
+msgid "Got Feedback?"
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:41
+msgid ""
+"We want to hear about your experience with the plugin. We would also love "
+"to hear any suggestions you may for future updates."
+msgstr ""
+
+#: admin/inc/bpht-welcome-page.php:42
+msgid "Send Feedback"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:12
+#: admin/wbcom/wbcom-paid-plugin-settings.php:31
+#: admin/wbcom/wbcom-paid-plugin-settings.php:32
+#: admin/wbcom/wbcom-paid-plugin-settings.php:49
+msgid "License"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:17
+msgid "Plugin License"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:23
+#: admin/wbcom/templates/wbcom-license-page.php:35
+#: edd-license/edd-plugin-license.php:372
+msgid "Product"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:24
+#: admin/wbcom/templates/wbcom-license-page.php:36
+#: edd-license/edd-plugin-license.php:373
+msgid "Version"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:25
+#: admin/wbcom/templates/wbcom-license-page.php:37
+#: edd-license/edd-plugin-license.php:374
+msgid "Key"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:26
+#: admin/wbcom/templates/wbcom-license-page.php:38
+#: edd-license/edd-plugin-license.php:375
+msgid "Status"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:12
+#: admin/wbcom/wbcom-admin-settings.php:269
+msgid "Themes & Extension"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:20
+#: admin/wbcom/templates/wbcom-plugins-page.php:29
+msgid "Paid Extension"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:21
+msgid "Free Extension"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:22
+msgid "LearnDash Extension"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:23
+#: admin/wbcom/templates/wbcom-plugins-page.php:363
+#: admin/wbcom/wbcom-admin-settings.php:188
+#: admin/wbcom/wbcom-admin-settings.php:189
+msgid "Our Themes"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:25
+#: admin/wbcom/templates/wbcom-plugins-page.php:30
+#: admin/wbcom/templates/wbcom-plugins-page.php:301
+#: admin/wbcom/templates/wbcom-plugins-page.php:426
+msgid "View More Extension"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:38
+msgid "BuddyPress Moderation Pro"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:39
+msgid ""
+"BuddyPress Moderation solution with advanced features to give you complete "
+"control over your community and keep it secure with automatic moderation "
+"and limitations, and more."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:41
+#: admin/wbcom/templates/wbcom-plugins-page.php:54
+#: admin/wbcom/templates/wbcom-plugins-page.php:67
+#: admin/wbcom/templates/wbcom-plugins-page.php:80
+#: admin/wbcom/templates/wbcom-plugins-page.php:93
+#: admin/wbcom/templates/wbcom-plugins-page.php:106
+#: admin/wbcom/templates/wbcom-plugins-page.php:119
+#: admin/wbcom/templates/wbcom-plugins-page.php:132
+#: admin/wbcom/templates/wbcom-plugins-page.php:145
+#: admin/wbcom/templates/wbcom-plugins-page.php:158
+#: admin/wbcom/templates/wbcom-plugins-page.php:171
+#: admin/wbcom/templates/wbcom-plugins-page.php:184
+#: admin/wbcom/templates/wbcom-plugins-page.php:197
+#: admin/wbcom/templates/wbcom-plugins-page.php:210
+#: admin/wbcom/templates/wbcom-plugins-page.php:223
+#: admin/wbcom/templates/wbcom-plugins-page.php:236
+#: admin/wbcom/templates/wbcom-plugins-page.php:249
+#: admin/wbcom/templates/wbcom-plugins-page.php:262
+#: admin/wbcom/templates/wbcom-plugins-page.php:275
+#: admin/wbcom/templates/wbcom-plugins-page.php:288
+#: admin/wbcom/templates/wbcom-plugins-page.php:312
+#: admin/wbcom/templates/wbcom-plugins-page.php:325
+#: admin/wbcom/templates/wbcom-plugins-page.php:338
+#: admin/wbcom/templates/wbcom-plugins-page.php:351
+#: admin/wbcom/templates/wbcom-plugins-page.php:375
+#: admin/wbcom/templates/wbcom-plugins-page.php:388
+#: admin/wbcom/templates/wbcom-plugins-page.php:401
+#: admin/wbcom/templates/wbcom-plugins-page.php:414
+#: admin/wbcom/templates/wbcom-plugins-page.php:434
+#: admin/wbcom/templates/wbcom-plugins-page.php:444
+#: admin/wbcom/templates/wbcom-plugins-page.php:454
+#: admin/wbcom/templates/wbcom-plugins-page.php:464
+#: admin/wbcom/templates/wbcom-plugins-page.php:474
+#: admin/wbcom/templates/wbcom-plugins-page.php:484
+msgid "View Details"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:42
+#: admin/wbcom/templates/wbcom-plugins-page.php:55
+#: admin/wbcom/templates/wbcom-plugins-page.php:68
+#: admin/wbcom/templates/wbcom-plugins-page.php:81
+#: admin/wbcom/templates/wbcom-plugins-page.php:94
+#: admin/wbcom/templates/wbcom-plugins-page.php:107
+#: admin/wbcom/templates/wbcom-plugins-page.php:120
+#: admin/wbcom/templates/wbcom-plugins-page.php:133
+#: admin/wbcom/templates/wbcom-plugins-page.php:146
+#: admin/wbcom/templates/wbcom-plugins-page.php:159
+#: admin/wbcom/templates/wbcom-plugins-page.php:172
+#: admin/wbcom/templates/wbcom-plugins-page.php:185
+#: admin/wbcom/templates/wbcom-plugins-page.php:198
+#: admin/wbcom/templates/wbcom-plugins-page.php:211
+#: admin/wbcom/templates/wbcom-plugins-page.php:224
+#: admin/wbcom/templates/wbcom-plugins-page.php:237
+#: admin/wbcom/templates/wbcom-plugins-page.php:250
+#: admin/wbcom/templates/wbcom-plugins-page.php:263
+#: admin/wbcom/templates/wbcom-plugins-page.php:276
+#: admin/wbcom/templates/wbcom-plugins-page.php:289
+#: admin/wbcom/templates/wbcom-plugins-page.php:313
+#: admin/wbcom/templates/wbcom-plugins-page.php:326
+#: admin/wbcom/templates/wbcom-plugins-page.php:339
+#: admin/wbcom/templates/wbcom-plugins-page.php:352
+#: admin/wbcom/templates/wbcom-plugins-page.php:389
+#: admin/wbcom/templates/wbcom-plugins-page.php:445
+#: admin/wbcom/templates/wbcom-plugins-page.php:455
+#: admin/wbcom/templates/wbcom-plugins-page.php:465
+#: admin/wbcom/templates/wbcom-plugins-page.php:475
+#: admin/wbcom/templates/wbcom-plugins-page.php:485
+msgid "Get It Now"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:51
+msgid "BuddyPress Resume Manager"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:52
+msgid ""
+"BuddyPress Resume Manager adds display resume functionality on a user’s "
+"BuddyPress/BuddyBoss Platform Profile."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:64
+msgid "BuddyPress Polls"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:65
+msgid ""
+"BuddyPress Polls allows your community members to create polls as an "
+"activity, letting your members respond."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:77
+msgid "BuddyPress Private Community Pro"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:78
+msgid ""
+"BuddyPress Private Community Pro offers Privacy control for profiles. It "
+"provides a feature to lockdown BuddyPress Component and asks users to log "
+"in to go further to check the profile or any other protected details."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:90
+msgid "BuddyPress Profile Pro"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:91
+msgid ""
+"BuddyPress Profile Pro gives you the power to extend BuddyPress Profiles "
+"with repeater fields and groups. You can easily add multiple field groups "
+"and display them at a member’s profile."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:103
+msgid "BuddyPress Check-ins Pro"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:104
+msgid ""
+"BuddyPress Check-ins Pro Plugin allows your members to post check-ins like "
+"other social media platforms, on your website activity stream. Members have "
+"a mashup of their check-ins on their profile."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:116
+#: admin/wbcom/templates/wbcom-plugins-page.php:431
+msgid "Quick View For Woocommerce"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:117
+msgid ""
+"Quick View For Woocommerce Pro plugin provides each of your site members "
+"their own writing environment with a fantastic user experience."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:129
+msgid "BuddyPress BuddyVendor"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:130
+msgid ""
+"BuddyVendor or BuddyPress Multivendor Marketplace Quickly turn your "
+"BuddyPress community into a social marketplace."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:142
+msgid "BuddyPress Statistics"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:143
+msgid ""
+"BuddyPress Stats plugin creates an activity log of everything that happens "
+"on your BuddyPress powered community site and keeps all counts on the user "
+"profile that displays a range of statistics of your community members."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:155
+msgid "Who viewed my profile"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:156
+msgid ""
+"The Who Viewed My Profile Plugin helps you to know about your profile "
+"visitors. It displays the count of the profile views on the member profile "
+"header."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:168
+msgid "BuddyPress Friend & Follow Suggestion"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:169
+msgid ""
+"BuddyPress Friends and Follow suggestions plugin assists you with improving "
+"your BuddyPress or BuddyBoss Platform-based community."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:181
+msgid "BuddyPress Giphy"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:182
+msgid ""
+"Make your activity stream even more tempting and interesting to attract "
+"members by adding GIFs."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:194
+msgid "Shortcodes for BuddyPress Pro"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:195
+msgid ""
+"Add and Customize the BuddyPress components on any of the WordPress "
+"pages/posts using elementor widgets"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:207
+msgid "BuddyPress Sticky Post"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:208
+msgid ""
+"Make your posts sticky on BuddyPress by pinning site-wide and group "
+"activities on the top of the community wall."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:220
+msgid "BuddyPress Quotes"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:221
+msgid ""
+"Allow BuddyPress users to post content with attractive background colors "
+"and beautiful images."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:233
+msgid "BuddyPress Auto Friends"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:234
+msgid ""
+"The new BuddyPress Automatic Friends plugins makes your new users feel a "
+"little more at home upon signing up to your community."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:246
+msgid "BuddyPress Newsfeed"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:247
+msgid ""
+"Create A Customized Newsfeed Experience Just Like Facebook. By default, "
+"BuddyPress offers separate type of activities for your BuddyPress Activity "
+"Stream."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:259
+msgid "BuddyPress Status"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:260
+msgid ""
+"Allow members to add status on their profile and give their reactions to "
+"all the activity updates."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:273
+msgid ""
+"BuddyPress Hashtags for BuddyPress and bbPress. It allows adding hashtag "
+"links to BuddyPress activity and bbPress topics. "
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:285
+msgid "BuddyPress Profanity"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:286
+msgid ""
+"Specify a list of bad words to control the content in your BuddyPress "
+"community."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:300
+msgid "Extension for LearnDash"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:309
+msgid "LMS Notes"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:310
+msgid ""
+"Learndash Notes will extend the LearnDash functionality to create Notes for "
+"courses, lessons and topics."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:322
+msgid "Learndash wpForo"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:323
+msgid ""
+"Learndash wpForo integration allows you to add a discussion channel for "
+"your learners. Allow you to link your course with multiple forums."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:335
+msgid "LearnDash Dashboard"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:336
+msgid ""
+"LearnDash Dashboard gives the admin, instructors, and students a dashboard "
+"of their own, where they can easily manage anything related to their "
+"courses, lessons, and contact others."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:348
+msgid "PeepSo LearnDash Integration"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:349
+msgid ""
+"Integrate LearnDash with PeepSo to display options for courses inside a "
+"member profile."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:364
+msgid "View More Themes"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:372
+msgid "Reign BuddyPress Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:373
+msgid ""
+"Create your social network website for the company, school, sports team, or "
+"any niche community using a highly customizable WordPress BuddyPress theme."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:376
+msgid "Get Sandbox"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:385
+msgid "BuddyX Pro Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:386
+msgid ""
+"To build an online community website for all niches with full flexibility, "
+"control, and freedom. No coding is required! Offers unique layouts with "
+"clean code and easy-to-customize options giving you a whole new way to "
+"visualize BuddyPress."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:398
+msgid "BuddyX Free Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:399
+#: admin/wbcom/templates/wbcom-plugins-page.php:452
+msgid ""
+"Allow users to create and manage their to-dos with the relevant category "
+"right from their profile."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:402
+#: admin/wbcom/templates/wbcom-plugins-page.php:435
+msgid "Get Pro"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:411
+msgid "KnowX Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:412
+msgid ""
+"A Free WordPress Knowledge base Theme. KnowX helps you set up a Knowledge "
+"Base in WordPress in less time than it takes to brew a coffee."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:415
+msgid "Get Demo"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:425
+msgid "Our Free Extension"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:432
+msgid ""
+"Quick View For Woocommerce is a free plugin that allows users to "
+"create/manage their blog/posts from the profile."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:441
+msgid "BuddyPress Ads"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:442
+msgid ""
+"Integrate your BuddyPress community to provide a smooth customer experience "
+"and increase site engagement."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:451
+msgid "BuddyPress User Todo List"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:461
+msgid "BuddyPress Job Manager"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:462
+msgid "Create specific tabs in employer’s and candidate’s profiles on BuddyPress."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:471
+msgid "BuddyPress Member Reviews"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:472
+msgid ""
+"Allow members to provide their ratings and reviews to other members’ "
+"profiles based on multiple criteria."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:481
+msgid "BuddyPress Birthday Widget"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:482
+msgid "Display the upcoming birthdays of your BuddyPress community members."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:12
+#: admin/wbcom/wbcom-admin-settings.php:196
+#: admin/wbcom/wbcom-admin-settings.php:197
+#: admin/wbcom/wbcom-admin-settings.php:275 buddypress-hashtags.php:132
+msgid "Support"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:17
+msgid "How can we help you?"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:18
+msgid ""
+"Our team is here to help you out at anytime. If you have any idea about how "
+"we could improve. You can share access to your site on our helpdesk if it "
+"can help getting faster."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:27
+msgid "Tickets Support"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:28
+msgid ""
+"Open a ticket on our helpdesk, we don't guarantee a fast response but "
+"within a week. Except if you've purchased one of our product we'll reply "
+"within 24 hours."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:31
+msgid "Open a ticket"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:44
+#: admin/wbcom/templates/wbcom-support-page.php:48
+msgid "Contact Us"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:45
+msgid ""
+"Create a new thread on our plugin page, participation is open to anyone "
+"from all around the world. We'll be there to help as well but can't "
+"guarantee any delay."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:156
+msgid "Activate"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:157
+msgid "Deactivate"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:180
+#: admin/wbcom/wbcom-admin-settings.php:181
+msgid "Our Plugins"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:263 buddypress-hashtags.php:131
+msgid "Settings"
+msgstr ""
+
+#: buddypress-hashtags.php:184
+#. translators: %1$s: BuddyPress Hashtags ; %2$s: BuddyPress
+msgid "%1$s is ineffective as it requires %2$s to be active."
+msgstr ""
+
+#: edd-license/EDD_BPHT_Plugin_Updater.php:204
+#. translators: %1$s: Version Info ; %2$s: changelog link ; %3$s: New Version
+#. Info
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: edd-license/EDD_BPHT_Plugin_Updater.php:213
+#. translators: %1$s: Version Info ; %2$s: changelog link ; %3$s: New Version
+#. Info
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: edd-license/EDD_BPHT_Plugin_Updater.php:403
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: edd-license/EDD_BPHT_Plugin_Updater.php:403
+msgid "Error"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:88 edd-license/edd-plugin-license.php:124
+#: edd-license/edd-plugin-license.php:200
+#: edd-license/edd-plugin-license.php:448
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:97
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:103
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:107
+msgid "Invalid license."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:112
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:116
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:120
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:303
+#. translators: %1$s: Expire Time
+msgid "Your BuddyPress Hashtags plugin license key expired on %s."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:333
+msgid "Please activate your BuddyPress Hashtags plugin license key."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:397
+msgid "Deactivate License"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:402
+msgid "Activate License"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:466
+msgid " Expires %s."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:469
+msgid "You have %1$s/%2$s-sites activated."
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:10
+msgid "bbPress Hashtags Widget"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:204
+#: public/class-bpht-hastags-wdget.php:197
+#: public/class-bpht-page-hashtags-widget.php:199
+#: public/class-bpht-post-hashtags-widget.php:199
+#: public/class-buddypress-hashtags-public.php:485
+#: public/class-buddypress-hashtags-public.php:615
+msgid "No hashtags"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:261
+#: public/class-bpht-hastags-wdget.php:253
+#: public/class-bpht-page-hashtags-widget.php:255
+#: public/class-bpht-post-hashtags-widget.php:255
+msgid "Title:"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:266
+#: public/class-bpht-hastags-wdget.php:258
+#: public/class-bpht-page-hashtags-widget.php:260
+#: public/class-bpht-post-hashtags-widget.php:260
+msgid "Limit:"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:300
+#: public/class-bpht-hastags-wdget.php:292
+#: public/class-bpht-page-hashtags-widget.php:294
+#: public/class-bpht-post-hashtags-widget.php:294
+msgid "Cloud"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:306
+#: public/class-bpht-hastags-wdget.php:298
+#: public/class-bpht-page-hashtags-widget.php:300
+#: public/class-bpht-post-hashtags-widget.php:300
+msgid "List"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:315
+#: public/class-bpht-hastags-wdget.php:307
+#: public/class-bpht-page-hashtags-widget.php:309
+#: public/class-bpht-post-hashtags-widget.php:309
+msgid "Sorted by name"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:321
+#: public/class-bpht-hastags-wdget.php:313
+#: public/class-bpht-page-hashtags-widget.php:315
+#: public/class-bpht-post-hashtags-widget.php:315
+msgid "Sorted by size"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:327
+#: public/class-bpht-hastags-wdget.php:319
+#: public/class-bpht-page-hashtags-widget.php:321
+#: public/class-bpht-post-hashtags-widget.php:321
+msgid "Sorted by date"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:333
+#: public/class-bpht-hastags-wdget.php:325
+#: public/class-bpht-page-hashtags-widget.php:327
+#: public/class-bpht-post-hashtags-widget.php:327
+msgid "Random"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:342
+#: public/class-bpht-hastags-wdget.php:334
+#: public/class-bpht-page-hashtags-widget.php:336
+#: public/class-bpht-post-hashtags-widget.php:336
+msgid "&uarr;"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:348
+#: public/class-bpht-hastags-wdget.php:340
+#: public/class-bpht-page-hashtags-widget.php:342
+#: public/class-bpht-post-hashtags-widget.php:342
+msgid "&darr;"
+msgstr ""
+
+#: public/class-bpht-bbpress-hastags-wdget.php:353
+#: public/class-bpht-hastags-wdget.php:345
+#: public/class-bpht-page-hashtags-widget.php:347
+#: public/class-bpht-post-hashtags-widget.php:347
+msgid "Show hashtag counts"
+msgstr ""
+
+#: public/class-bpht-hastags-wdget.php:10
+msgid "BuddyPress Hashtags Widget"
+msgstr ""
+
+#: public/class-bpht-hastags-wdget.php:229
+msgid "Community Hashtags"
+msgstr ""
+
+#: public/class-bpht-page-hashtags-widget.php:9
+#: public/class-bpht-page-hashtags-widget.php:231
+msgid "Page Hashtags"
+msgstr ""
+
+#: public/class-bpht-page-hashtags-widget.php:10
+msgid "Page Hashtags Widget"
+msgstr ""
+
+#: public/class-bpht-post-hashtags-widget.php:9
+#: public/class-bpht-post-hashtags-widget.php:231
+msgid "Posts Hashtags"
+msgstr ""
+
+#: public/class-bpht-post-hashtags-widget.php:10
+msgid "Posts Hashtags Widget"
+msgstr ""
+
+#: public/class-buddypress-hashtags-public.php:754
+msgid "Followed Hashtag"
+msgstr ""
+
+#: public/class-buddypress-hashtags-public.php:770
+msgid "Hashtags"
+msgstr ""
+
+#: public/class-buddypress-hashtags-public.php:782
+msgid "Followed Hashtags"
+msgstr ""
+
+#: public/class-buddypress-hashtags-public.php:826
+msgid "Add New Hashtags"
+msgstr ""

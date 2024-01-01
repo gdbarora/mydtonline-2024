@@ -1,0 +1,47 @@
+/* Popup */
+.gamipress-congratulations-popup-wrapper {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    overflow-y: auto;
+    max-height: 100%;
+
+    max-width: 600px;
+
+    z-index: 1050;
+}
+
+.gamipress-congratulations-popup {
+    padding: 1em;
+    background: #fff;
+}
+
+.gamipress-congratulations-popup-close {
+    float: right;
+    margin-top: -10px;
+    margin-right: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.gamipress-congratulations-popups-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+
+    z-index: 1000;
+}

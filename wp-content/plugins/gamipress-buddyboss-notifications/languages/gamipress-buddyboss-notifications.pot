@@ -1,0 +1,455 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress BuddyBoss Notifications\n"
+"Report-Msgid-Bugs-To: https://gamipress.com/\n"
+"POT-Creation-Date: 2021-03-31 10:04+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://gamipress.com/)\n"
+"Language-Team: GamiPress <contact@gamipress.com>\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: gamipress-buddyboss-notifications.php:129 includes/filters.php:234
+msgid "You have unlocked the {achievement_type} {link}"
+msgstr ""
+
+#: gamipress-buddyboss-notifications.php:131 includes/filters.php:335
+msgid "You have completed the step \"{label}\" of the {achievement_type} {achievement_link}"
+msgstr ""
+
+#: gamipress-buddyboss-notifications.php:133 includes/filters.php:432
+msgid "You have earned {points} {points_label} for completing \"{label}\""
+msgstr ""
+
+#: gamipress-buddyboss-notifications.php:135 includes/filters.php:529
+msgid "You have lost {points} {points_label} for \"{label}\""
+msgstr ""
+
+#: gamipress-buddyboss-notifications.php:137 includes/filters.php:616
+msgid "You have reached the {rank_type} {link}"
+msgstr ""
+
+#: gamipress-buddyboss-notifications.php:139 includes/filters.php:717
+msgid "You have completed the requirement \"{label}\" of the {rank_type} {rank_link}"
+msgstr ""
+
+#: gamipress-buddyboss-notifications.php:192
+#, php-format
+msgid "GamiPress - BuddyBoss integration requires %s (%s or higher) and %s in order to work. Please install and activate them."
+msgstr ""
+
+#: includes/admin.php:42 includes/admin.php:269 includes/admin.php:333
+#: includes/admin.php:397 includes/admin.php:497
+msgid "BuddyBoss Notifications"
+msgstr ""
+
+#: includes/admin.php:51 includes/admin.php:75
+#, php-format
+msgid "<strong>Note:</strong> You can customize these settings by type on each <a href=\"%s\" target=\"_blank\">achievement type's edit screen</a>."
+msgstr ""
+
+#: includes/admin.php:57 includes/admin.php:276
+msgid "Disable achievements notifications"
+msgstr ""
+
+#: includes/admin.php:58
+msgid "Check this option to do not notify users about achievements unlocked."
+msgstr ""
+
+#: includes/admin.php:63 includes/admin.php:87 includes/admin.php:111
+#: includes/admin.php:135 includes/admin.php:159 includes/admin.php:183
+#: includes/admin.php:282 includes/admin.php:297 includes/admin.php:346
+#: includes/admin.php:361 includes/admin.php:410 includes/admin.php:425
+msgid "Notification content"
+msgstr ""
+
+#: includes/admin.php:64
+msgid "Achievement notification content. Available tags:"
+msgstr ""
+
+#: includes/admin.php:81 includes/admin.php:291
+msgid "Disable steps notifications"
+msgstr ""
+
+#: includes/admin.php:82
+msgid "Check this option to do not notify users about steps completed."
+msgstr ""
+
+#: includes/admin.php:88
+msgid "Step notification content. Available tags:"
+msgstr ""
+
+#: includes/admin.php:99 includes/admin.php:123
+#, php-format
+msgid "<strong>Note:</strong> You can customize these settings by type on each <a href=\"%s\" target=\"_blank\">points type's edit screen</a>."
+msgstr ""
+
+#: includes/admin.php:105 includes/admin.php:340
+msgid "Disable points awards notifications"
+msgstr ""
+
+#: includes/admin.php:106
+msgid "Check this option to do not notify users about points awards."
+msgstr ""
+
+#: includes/admin.php:112
+msgid "Points award notification content. Available tags:"
+msgstr ""
+
+#: includes/admin.php:129 includes/admin.php:355
+msgid "Disable points deductions notifications"
+msgstr ""
+
+#: includes/admin.php:130
+msgid "Check this option to do not notify users about points deductions."
+msgstr ""
+
+#: includes/admin.php:136
+msgid "Points deduction notification content. Available tags:"
+msgstr ""
+
+#: includes/admin.php:147 includes/admin.php:171
+#, php-format
+msgid "<strong>Note:</strong> You can customize these settings by type on each <a href=\"%s\" target=\"_blank\">rank type's edit screen</a>."
+msgstr ""
+
+#: includes/admin.php:153 includes/admin.php:404
+msgid "Disable ranks notifications"
+msgstr ""
+
+#: includes/admin.php:154
+msgid "Check this option to do not notify users about ranks reached."
+msgstr ""
+
+#: includes/admin.php:160
+msgid "Rank notification content. Available tags:"
+msgstr ""
+
+#: includes/admin.php:177 includes/admin.php:419
+msgid "Disable rank requirements notifications"
+msgstr ""
+
+#: includes/admin.php:178
+msgid "Check this option to do not notify to users about rank requirements completed."
+msgstr ""
+
+#: includes/admin.php:184
+msgid "Rank requirement notification content. Available tags:"
+msgstr ""
+
+#: includes/admin.php:193 includes/admin.php:308
+msgid "Achievements"
+msgstr ""
+
+#: includes/admin.php:202 includes/admin.php:316
+msgid "Steps"
+msgstr ""
+
+#: includes/admin.php:211 includes/admin.php:372
+msgid "Points Awards"
+msgstr ""
+
+#: includes/admin.php:220 includes/admin.php:380
+msgid "Points Deducts"
+msgstr ""
+
+#: includes/admin.php:229 includes/admin.php:436
+msgid "Ranks"
+msgstr ""
+
+#: includes/admin.php:238 includes/admin.php:444
+msgid "Rank Requirements"
+msgstr ""
+
+#: includes/admin.php:277
+msgid "Check this option to do not notify users about achievements unlocked of this achievement type."
+msgstr ""
+
+#: includes/admin.php:283
+msgid "Achievement notification content (leave blank to keep the content configured on settings). Available tags:"
+msgstr ""
+
+#: includes/admin.php:292
+msgid "Check this option to do not notify users about steps completed from achievements of this achievement type."
+msgstr ""
+
+#: includes/admin.php:298
+msgid "Step notification content (leave blank to keep the content configured on settings). Available tags:"
+msgstr ""
+
+#: includes/admin.php:341
+msgid "Check this option to do not notify users about points awards of this points type."
+msgstr ""
+
+#: includes/admin.php:347
+msgid "Points award notification content (leave blank to keep the content configured on settings). Available tags:"
+msgstr ""
+
+#: includes/admin.php:356
+msgid "Check this option to do not notify users about points deductions of this points type."
+msgstr ""
+
+#: includes/admin.php:362
+msgid "Points deduction notification content (leave blank to keep the content configured on settings). Available tags:"
+msgstr ""
+
+#: includes/admin.php:405
+msgid "Check this option to do not notify users about ranks reached of this rank type."
+msgstr ""
+
+#: includes/admin.php:411
+msgid "Rank notification content (leave blank to keep the content configured on settings). Available tags:"
+msgstr ""
+
+#: includes/admin.php:420
+msgid "Check this option to do not notify to users about rank requirements completed from ranks of this rank type."
+msgstr ""
+
+#: includes/admin.php:426
+msgid "Rank requirement notification content (leave blank to keep the content configured on settings). Available tags:"
+msgstr ""
+
+#: includes/admin.php:470
+msgid "GamiPress BuddyBoss Notifications"
+msgstr ""
+
+#: includes/admin.php:473
+msgid "License"
+msgstr ""
+
+#: includes/template-functions.php:21
+msgid "Awarded user display name."
+msgstr ""
+
+#: includes/template-functions.php:22
+msgid "Awarded user first name."
+msgstr ""
+
+#: includes/template-functions.php:23
+msgid "Awarded user last name."
+msgstr ""
+
+#: includes/template-functions.php:24
+msgid "Awarded user ID (useful for shortcodes that user ID can be passed as attribute)."
+msgstr ""
+
+#: includes/template-functions.php:73 includes/template-functions.php:210
+msgid "The achievement ID (useful for shortcodes that achievement ID can be passed as attribute)."
+msgstr ""
+
+#: includes/template-functions.php:74
+msgid "The achievement title."
+msgstr ""
+
+#: includes/template-functions.php:75
+msgid "URL to the achievement."
+msgstr ""
+
+#: includes/template-functions.php:76
+msgid "Link to the achievement with the achievement title as text."
+msgstr ""
+
+#: includes/template-functions.php:77
+msgid "The achievement featured image."
+msgstr ""
+
+#: includes/template-functions.php:78
+msgid "The achievement excerpt."
+msgstr ""
+
+#: includes/template-functions.php:79
+msgid "The achievement content."
+msgstr ""
+
+#: includes/template-functions.php:80
+msgid "The achievement steps."
+msgstr ""
+
+#: includes/template-functions.php:81
+msgid "The achievement type singular."
+msgstr ""
+
+#: includes/template-functions.php:82
+msgid "The achievement congratulations text."
+msgstr ""
+
+#: includes/template-functions.php:97 includes/template-functions.php:234
+#: includes/template-functions.php:327 includes/template-functions.php:420
+#: includes/template-functions.php:516 includes/template-functions.php:650
+msgid "Show tags"
+msgstr ""
+
+#: includes/template-functions.php:209
+msgid "The step label."
+msgstr ""
+
+#: includes/template-functions.php:211
+msgid "The step achievement title."
+msgstr ""
+
+#: includes/template-functions.php:212
+msgid "URL to the step achievement."
+msgstr ""
+
+#: includes/template-functions.php:213
+msgid "Link to the step achievement with the achievement title as text."
+msgstr ""
+
+#: includes/template-functions.php:214
+msgid "The step achievement featured image."
+msgstr ""
+
+#: includes/template-functions.php:215
+msgid "The step achievement excerpt."
+msgstr ""
+
+#: includes/template-functions.php:216
+msgid "The step achievement content."
+msgstr ""
+
+#: includes/template-functions.php:217
+msgid "The step achievement list of steps."
+msgstr ""
+
+#: includes/template-functions.php:218
+msgid "The step achievement type singular."
+msgstr ""
+
+#: includes/template-functions.php:219
+msgid "The step achievement congratulations text."
+msgstr ""
+
+#: includes/template-functions.php:306
+msgid "The points award label."
+msgstr ""
+
+#: includes/template-functions.php:307
+msgid "The amount of points earned."
+msgstr ""
+
+#: includes/template-functions.php:308
+msgid "The points award points type. Singular or plural is based on the amount of points earned."
+msgstr ""
+
+#: includes/template-functions.php:309 includes/template-functions.php:402
+msgid "The full amount of points user has been earned of this points type."
+msgstr ""
+
+#: includes/template-functions.php:310 includes/template-functions.php:403
+msgid "The user's points amount label. Singular or plural is based on the current user's points amount."
+msgstr ""
+
+#: includes/template-functions.php:311 includes/template-functions.php:404
+msgid "The points type featured image."
+msgstr ""
+
+#: includes/template-functions.php:312
+msgid "(Deprecated user {points_label} tag instead) The points award points type. Singular or plural is based on the amount of points earned."
+msgstr ""
+
+#: includes/template-functions.php:399
+msgid "The points deduct label."
+msgstr ""
+
+#: includes/template-functions.php:400
+msgid "The amount of points deducted."
+msgstr ""
+
+#: includes/template-functions.php:401
+msgid "The points deduct points type label. Singular or plural is based on the amount of points earned."
+msgstr ""
+
+#: includes/template-functions.php:405
+msgid "(Deprecated use {points_label} tag instead) The points deduct points type. Singular or plural is based on the amount of points earned."
+msgstr ""
+
+#: includes/template-functions.php:492 includes/template-functions.php:626
+msgid "The rank ID (useful for shortcodes that rank ID can be passed as attribute)."
+msgstr ""
+
+#: includes/template-functions.php:493
+msgid "The rank title."
+msgstr ""
+
+#: includes/template-functions.php:494
+msgid "URL to the rank."
+msgstr ""
+
+#: includes/template-functions.php:495
+msgid "Link to the rank with the rank title as text."
+msgstr ""
+
+#: includes/template-functions.php:496
+msgid "The rank featured image."
+msgstr ""
+
+#: includes/template-functions.php:497
+msgid "The rank excerpt."
+msgstr ""
+
+#: includes/template-functions.php:498
+msgid "The rank content."
+msgstr ""
+
+#: includes/template-functions.php:499
+msgid "The rank requirements."
+msgstr ""
+
+#: includes/template-functions.php:500
+msgid "The rank type singular."
+msgstr ""
+
+#: includes/template-functions.php:501
+msgid "The rank congratulations text."
+msgstr ""
+
+#: includes/template-functions.php:625
+msgid "The rank requirement label."
+msgstr ""
+
+#: includes/template-functions.php:627
+msgid "The requirement rank title."
+msgstr ""
+
+#: includes/template-functions.php:628
+msgid "URL to the requirement rank."
+msgstr ""
+
+#: includes/template-functions.php:629
+msgid "Link to the requirement rank with the rank title as text."
+msgstr ""
+
+#: includes/template-functions.php:630
+msgid "The requirement rank featured image."
+msgstr ""
+
+#: includes/template-functions.php:631
+msgid "The requirement rank excerpt."
+msgstr ""
+
+#: includes/template-functions.php:632
+msgid "The requirement rank content."
+msgstr ""
+
+#: includes/template-functions.php:633
+msgid "The requirement rank list of requirements."
+msgstr ""
+
+#: includes/template-functions.php:634
+msgid "The requirement rank type singular."
+msgstr ""
+
+#: includes/template-functions.php:635
+msgid "The requirement rank congratulations text."
+msgstr ""

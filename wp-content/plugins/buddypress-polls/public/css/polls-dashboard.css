@@ -1,0 +1,243 @@
+.main-dashboard .deshboard-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 0 20px;
+}
+
+.main-dashboard .deshboard-top .main-title h3 {
+    margin: 0;
+}
+
+.add-poll-button .button {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    padding: 7px 20px;
+    color: var(--wbpoll-global-primary-color) !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    background: #fff;
+    border: 2px solid var(--wbpoll-global-primary-color) !important;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.add-poll-button .button:hover,
+.add-poll-button .button:focus {
+    background-color: transparent;
+    color: inherit;
+    box-shadow: 0 0.5em 0.5em -0.4em #3a3a3a !important;
+    -webkit-transform: translateY(-0.1em);
+    -ms-transform: translateY(-0.1em);
+    transform: translateY(-0.1em);
+    border: 2px solid var(--wbpoll-global-primary-color) !important;
+}
+
+.main-dashboard .poll-listing table {
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto 20px;
+    position: relative;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.main-dashboard .poll-listing table tbody tr {
+    height: 50px;
+}
+
+.main-dashboard .poll-listing table th,
+.main-dashboard .poll-listing table td {
+    text-align: left;
+    font-size: 15px;
+    padding: 10px;
+    border: 0;
+}
+
+.main-dashboard .poll-listing table td.poll-action .btn {
+    margin: 0;
+    margin-right: 5px;
+    padding: 5px !important;
+    background: transparent !important;
+    color: inherit;
+    width: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+    border: 0 !important;
+    outline: 0 !important;
+    cursor: pointer;
+}
+
+.main-dashboard .poll-listing table td.poll-action .btn[data-polls-tooltip]:after {
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.5);
+}
+
+.main-dashboard .poll-listing table td.poll-action .btn i {
+    font-size: 16px;
+}
+
+.main-dashboard .poll-listing table td.poll-action .btn i.wb-icon-eye-small {
+    content: '\e843';
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 761px) {
+
+    .main-dashboard .poll-listing table th:first-child,
+    .main-dashboard .poll-listing table td:first-child {
+        padding-left: 20px;
+    }
+
+    .main-dashboard .poll-listing table th.poll-action,
+    .main-dashboard .poll-listing table td.poll-action {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+        padding-right: 20px;
+    }
+}
+
+.main-dashboard .poll-listing table th {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+.main-dashboard .poll-listing table thead tr,
+.main-dashboard .poll-listing table thead tr th {
+    height: 60px;
+    background: #36304a;
+}
+
+.main-dashboard .poll-listing table tbody tr:nth-child(2n) {
+    background-color: #f5f5f5;
+}
+
+.main-dashboard .poll-listing table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.main-dashboard .tab-list {
+    display: none;
+}
+
+.main-dashboard .tab-list.active {
+    display: block;
+}
+
+.main-dashboard .dashboard-nav {
+    margin: 0 0 20px;
+}
+
+.main-dashboard .dashboard-nav ul.dashboard-subnav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.main-dashboard .dashboard-nav ul.dashboard-subnav li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-dashboard .dashboard-nav ul.dashboard-subnav li a {
+    display: block;
+    text-decoration: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.main-dashboard .dashboard-nav ul.dashboard-subnav li.selected {
+    border-bottom: 2px solid var(--wbpoll-global-primary-color) !important;
+}
+
+.main-dashboard .dashboard-nav ul.dashboard-subnav li.selected a {
+    color: var(--wbpoll-global-primary-color) !important;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    .main-dashboard .poll-listing table.poll-listing-table,
+    .main-dashboard .poll-listing table.poll-listing-table thead,
+    .main-dashboard .poll-listing table.poll-listing-table tbody,
+    .main-dashboard .poll-listing table.poll-listing-table th,
+    .main-dashboard .poll-listing table.poll-listing-table td,
+    .main-dashboard .poll-listing table.poll-listing-table tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .main-dashboard .poll-listing table.poll-listing-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .main-dashboard .poll-listing table tbody tr:hover {
+        background-color: transparent;
+    }
+
+    .main-dashboard .poll-listing table tbody tr:nth-child(2n) {
+        background-color: #f5f5f5;
+    }
+
+    .main-dashboard .poll-listing table.poll-listing-table tr {
+        background: #fff;
+        height: auto;
+    }
+
+    .main-dashboard .poll-listing table.poll-listing-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .main-dashboard .poll-listing table.poll-listing-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 10px;
+        left: 10px;
+        width: 45%;
+        font-weight: 600;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /*
+	Label the data
+	*/
+    .main-dashboard .poll-listing table.poll-listing-table td:before {
+        content: attr(data-title) ": ";
+        font-weight: 700;
+        float: left;
+    }
+}
