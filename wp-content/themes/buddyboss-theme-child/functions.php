@@ -2146,7 +2146,7 @@ function custom_learndash_completion_redirect($redirect_url, $post_id) {
 
 	$associatedCourses = get_post_meta($courseId, '_numeric_value', true);//comma seperated corresponding courses
 	$associatedCoursesArray = explode(',', $associatedCourses);//array converted
-	$user_id = bp_get_displayed_user_id();
+	$user_id = bp_displayed_user_id();
 
 	foreach ($associatedCoursesArray as $associatedCourse) {
 		$courseSteps = learndash_get_course_steps($associatedCourse);
