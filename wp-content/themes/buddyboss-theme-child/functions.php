@@ -2138,6 +2138,36 @@ function show_site_tour() {
 }
 
 //add_action('wp_enqueue_scripts', 'show_site_tour');
+
+function custom_learndash_completion_redirect($redirect_url, $post_id) {
+	$courseId = learndash_get_course_id($post_id);//displayed course id
+	$currentCourseSteps = learndash_get_course_steps($courseId);//displayed course steps
+	$currentResourcePosition = array_search($post_id, $currentCourseSteps);//displayed resource position
+
+	$associatedCourses = get_post_meta($courseId, '_numeric_value', true);//comma seperated corresponding courses
+	$associatedCoursesArray = explode(',', $associatedCourses);//array converted
+	$user_id = bp_get_displayed_user_id();
+
+	foreach ($associatedCoursesArray as $associatedCourse) {
+		$courseSteps = learndash_get_course_steps($associatedCourse);
+		$correspondingResourceId = $courseSteps[$currentResourcePosition];//corresponding resource id
+
+		$post = get_post($correspondingResourceId);
+		learndash_process_mark_complete( $user_id, $correspondingResourceId );
+
+	}
+
+    return $redirect_url;
+}
+
+add_filter('learndash_completion_redirect', 'custom_learndash_completion_redirect', 10, 2);
+
+
+add_filter('learndash_process_mark_complete', 'always_return_true', 10, 3);
+
+function always_return_true($result, $post, $current_user) {
+    return true;
+}
 function complete_corresponding_quizzes($quizdata, $current_user)
 {
 	$user_id = $current_user->ID;
