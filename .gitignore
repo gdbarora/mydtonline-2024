@@ -48,3 +48,14 @@ wp-config.php
 #/wp-content/themes
 .DS_Store
 wp-content/.DS_Store
+wp-content/wflogs/ips.php
+wp-content/wflogs/config-synced.php
+wp-content/wflogs/config-livewaf.php
+wp-content/updraft/web.config
+wp-content/updraft/index.html
+wp-content/updraft/.htaccess
+wp-content/ai1wm-backups/web.config
+wp-content/ai1wm-backups/robots.txt
+wp-content/ai1wm-backups/index.php
+wp-content/ai1wm-backups/index.html
+wp-content/ai1wm-backups/.htaccess
