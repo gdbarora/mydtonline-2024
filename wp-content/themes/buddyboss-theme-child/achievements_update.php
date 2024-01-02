@@ -73,11 +73,7 @@ function sendNotificationToGameKeepers($achievementId, $userId, $componentAction
                 'recorded_time' => bp_core_current_time(),
                 'is_new' => 1,
             );
-            $achievementStatus = get_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, true);
-            $isReviewed = ($achievementStatus === '1' || $achievementStatus === '0');
-            if (!$isReviewed) {
-                bp_notifications_add_notification($notification_args);
-            }
+            bp_notifications_add_notification($notification_args);
         }
     }
 
