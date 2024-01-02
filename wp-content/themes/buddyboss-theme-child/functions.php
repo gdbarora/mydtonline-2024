@@ -1823,6 +1823,7 @@ function custom_learndash_taxonomy_args($tax_options, $tax_slug)
 	// Register the custom taxonomy
 	register_taxonomy('ld_course_language', 'sfwd-courses', $course_language_args);
 
+	do_action('ld_custom_register_taxonomies');
 	// Return the modified $tax_options
 	return $tax_options;
 }
@@ -2153,3 +2154,31 @@ function learndash_get_course_quizzes($course_id = 0)
 
 
 include_once 'achievements_update.php';
+
+// Function to create ld_course_tags for WordPress roles
+function create_ld_course_tags_for_roles() {
+    // Get all WordPress roles
+    $wp_roles = wp_roles()->roles;
+
+    // Roles to filter out
+    $exclude_roles = array('administrator', 'editor', 'author', 'contributor', 'subscriber');
+
+    // Check if there are roles
+    if (is_array($wp_roles) && !empty($wp_roles)) {
+        foreach ($wp_roles as $role_slug => $role_info) {
+            // Check if the role should be excluded
+            if (!in_array($role_slug, $exclude_roles)) {
+                // Check if the term already exists
+                $term_exists = term_exists($role_info['name'], 'ld_course_tag');
+
+                // If the term doesn't exist, add it
+                if (!$term_exists || is_wp_error($term_exists)) {
+                    wp_insert_term($role_info['name'], 'ld_course_tag');
+                }
+            }
+        }
+    }
+}
+
+// Hook the function to run on LearnDash custom taxonomies registration
+add_action('ld_custom_register_taxonomies', 'create_ld_course_tags_for_roles');
