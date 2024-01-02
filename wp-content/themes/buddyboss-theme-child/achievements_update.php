@@ -81,8 +81,9 @@ function sendNotificationToGameKeepers($achievementId, $userId, $componentAction
     $achievementType = get_post_type($achievementId);
 
     $achievementStatus = get_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, true);
-    if($achievementStatus !== 1){
-    update_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, 2);}
+    if ($achievementStatus !== 1) {
+        update_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, 2);
+    }
 }
 function handleEnagicRankUpdate($enagicRankFieldId, $enagicRankOldValue, $enagicRankNewValue, $userId)
 {
@@ -178,54 +179,40 @@ function manageRequestedAchievement()
 
     $currentUserId = get_current_user_id();
 
-    $alreadyHigherRank = false;
+    $achievementReviews = get_user_meta($userId, 'reviewedAchievement_' . $achievementType, true);
+    $newAchievementReviewsArray = !empty($achievementReviews) ? $achievementReviews : array(); //Array to store updated reviews
 
-    if (!gamipress_has_user_earned_achievement($achievementId, $userId)) {
-        $latest_achievement_of_type = get_latest_achievement_by_type($userId, $achievementType);
-        if ($latest_achievement_of_type < $achievementTitle) {
-            gamipress_award_achievement_to_user($achievementId, $userId);
-        } else {
-            $alreadyHigherRank = true;
-        }
-    }
+    $reviewedAchievementData = array(
+        'Status' => $action,
+        'Reviewed By' => $currentUserId,
+        'Achievement' => $achievementId,
+        'Time' => date('Y-m-d H:i:s'),
+    );
+    $newAchievementReviewsArray[$notificationId] = $reviewedAchievementData;
+    update_user_meta($userId, 'reviewedAchievement_' . $achievementType, $newAchievementReviewsArray);
 
-    if (!$alreadyHigherRank) {
-        $achievementReviews = get_user_meta($userId, 'reviewedAchievement_' . $achievementType, true);
-        $newAchievementReviewsArray = !empty($achievementReviews) ? $achievementReviews : array(); //Array to store updated reviews
+    $achievementStatus = get_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, true);
+    $hasAchievementApproved = ($achievementStatus === 1);
 
-        $reviewedAchievementData = array(
-            'Status' => $action,
-            'Reviewed By' => $currentUserId,
-            'Achievement' => $achievementId,
-            'Time' => date('Y-m-d H:i:s'),
-        );
-        $newAchievementReviewsArray[$notificationId] = $reviewedAchievementData;
-        update_user_meta($userId, 'reviewedAchievement_' . $achievementType, $newAchievementReviewsArray);
+    if (!$hasAchievementApproved) { //Check if achievement is not already approved
+        if ($action === 'approve') {
 
-        $achievementStatus = get_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, true);
-        $hasAchievementApproved = ($achievementStatus === 1);
-
-        if (!$hasAchievementApproved) { //Check if achievement is not already approved
-            if ($action === 'approve') {
-
-                $hasUserAchievement = gamipress_has_user_earned_achievement($achievementId, $userId);
-                if (!$hasUserAchievement) {
-                    gamipress_award_achievement_to_user($achievementId, $userId);
-                }
-                update_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, 1);
-                xprofile_set_field_data($profileFieldId, $userId, $achievementTitle);
-                $reviewedAchievementData['Message'] = 'The achievement ' . $achievementTitle . ' is successfully approved.';
-            } else {
-                update_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, 0);
-                $reviewedAchievementData['Message'] = 'The achievement ' . $achievementTitle . ' is successfully rejected.';
+            $hasUserAchievement = gamipress_has_user_earned_achievement($achievementId, $userId);
+            if (!$hasUserAchievement) {
+                gamipress_award_achievement_to_user($achievementId, $userId);
             }
+            update_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, 1);
+            xprofile_set_field_data($profileFieldId, $userId, $achievementTitle);
+            $reviewedAchievementData['Message'] = 'The achievement ' . $achievementTitle . ' is successfully approved.';
         } else {
-            $reviewedAchievementData['Message'] = 'The achievement ' . $achievementTitle . ' is already approved.';
+            update_user_meta($userId, 'awarded_' . $achievementType . '_' . $achievementTitle, 0);
+            $reviewedAchievementData['Message'] = 'The achievement ' . $achievementTitle . ' is successfully rejected.';
         }
-
-        wp_send_json_success($reviewedAchievementData);
-
+    } else {
+        $reviewedAchievementData['Message'] = 'The achievement ' . $achievementTitle . ' is already approved.';
     }
+
+    wp_send_json_success($reviewedAchievementData);
 }
 
 add_filter('bp_get_the_notification_description', 'custom_notification_description_filter', 10, 2);
@@ -245,16 +232,14 @@ function custom_notification_description_filter($description, $notification)
         $hasAchievementReviewed = ($achievementStatus === '2');
 
 
-        if($hasAchievementReviewed){
+        if ($hasAchievementReviewed) {
             $approveBtn = '<button class="awardAchievement button small ' . $achievementTitle . '" achievement-id="' . $achievementId . '" user-id="' . $requesterId . '" notification-id="' . $notification->id . '" review-action="approve">Approve</button>';
             $rejectBtn = '<button class="rejectAchievement button outline small ' . $achievementTitle . '" achievement-id="' . $achievementId . '" user-id="' . $requesterId . '" notification-id="' . $notification->id . '" review-action="reject">Reject</button>';
-        }
-        else{
+        } else {
             $achievementReviews = get_user_meta($requesterId, 'reviewedAchievement_' . $achievementType, true);
-            if($achievementStatus === '1'){
+            if ($achievementStatus === '1') {
                 $message = 'The user request has been approved.';
-            }
-            else{
+            } else {
                 $message = 'The user request has been rejected.';
             }
         }
