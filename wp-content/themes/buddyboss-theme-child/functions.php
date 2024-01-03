@@ -744,98 +744,8 @@ function bb_manage_dynamic_css_js()
 }
 add_action('wp_head', 'bb_manage_dynamic_css_js');
 
-function reject_selected_achievement()
-{
-	$rejected_rank = $_POST['rejected_rank'];
-	$user_id_reject = $_POST['user_id_reject'];
-	update_user_meta($user_id_reject, 'bb_reject_achievement_id', $rejected_rank);
-	wp_die($rejected_rank);
-}
-add_action("wp_ajax_reject_selected_achievement", "reject_selected_achievement");
-add_action("wp_ajax_nopriv_reject_selected_achievement", "reject_selected_achievement");
-
-function bb_award_selected_achievement_callback()
-{
-
-	$user_rank = $_POST['user_rank'];
-	$user_id_award = $_POST['user_id_award'];
-
-
-	$achievementid = bb_get_achievement_id_by_title($user_rank);
-
-	if (!gamipress_has_user_earned_achievement($achievementid, $user_id_award)):
-		gamipress_award_achievement_to_user($achievementid, $user_id_award);
-	endif;
-	update_user_meta($user_id_award, 'bb_approve_achievement_id', $user_rank);
-	wp_die('Approved');
-}
-
-add_action("wp_ajax_award_selected_achievement", "bb_award_selected_achievement_callback");
-add_action("wp_ajax_nopriv_award_selected_achievement", "bb_award_selected_achievement_callback");
-
-function bb_award_selected_soc_achievement_callback()
-{
-	$user_soc_rank = $_POST['user_soc_rank'];
-	$user_id_soc_award = $_POST['user_id_soc_award'];
-
-	$socachievementid = bb_get_soc_achievement_id_by_title($user_soc_rank);
-
-	if (!gamipress_has_user_earned_achievement($socachievementid, $user_id_soc_award)):
-		gamipress_award_achievement_to_user($socachievementid, $user_id_soc_award);
-	endif;
-	update_user_meta($user_id_soc_award, 'bb_approve_socachievement_id', $user_soc_rank);
-	wp_die('Approved');
-}
-add_action("wp_ajax_award_selected_soc_achievement", "bb_award_selected_soc_achievement_callback");
-add_action("wp_ajax_nopriv_award_selected_soc_achievement", "bb_award_selected_soc_achievement_callback");
-
-function reject_selected_soc_achievement()
-{
-	$rejected_rank = $_POST['rejected_soc_rank'];
-	$user_id_reject = $_POST['user_id_soc_reject'];
-	update_user_meta($user_id_reject, 'bb_reject_socachievement_id', $rejected_rank);
-	wp_die($rejected_rank);
-}
-add_action("wp_ajax_reject_selected_soc_achievement", "reject_selected_soc_achievement");
-add_action("wp_ajax_nopriv_reject_selected_soc_achievement", "reject_selected_soc_achievement");
-
-function bb_get_achievement_id_by_title(string $title = ''): int
-{
-	$posts = get_posts(
-		array(
-			'post_type' => 'enagic-rank',
-			'title' => $title,
-			'numberposts' => 1,
-			'update_post_term_cache' => false,
-			'update_post_meta_cache' => false,
-			'orderby' => 'post_date ID',
-			'order' => 'ASC',
-			'fields' => 'ids'
-		)
-	);
-
-	return empty($posts) ? get_the_ID() : $posts[0];
-}
-function bb_get_soc_achievement_id_by_title(string $title = ''): int
-{
-	$posts = get_posts(
-		array(
-			'post_type' => 'card-star',
-			'title' => $title,
-			'numberposts' => 1,
-			'update_post_term_cache' => false,
-			'update_post_meta_cache' => false,
-			'orderby' => 'post_date ID',
-			'order' => 'ASC',
-			'fields' => 'ids'
-		)
-	);
-
-	return empty($posts) ? get_the_ID() : $posts[0];
-}
 
 //member-stats fn starts
-
 function get_buddypress_member_counts($days = 7)
 {
 	// Make sure BuddyPress is active
@@ -868,8 +778,6 @@ function get_buddypress_member_counts($days = 7)
 		'inactive_members' => $inactive_members_count,
 	);
 }
-
-
 
 function buddypress_member_counts_shortcode($atts)
 {
@@ -1915,6 +1823,7 @@ function custom_learndash_taxonomy_args($tax_options, $tax_slug)
 	// Register the custom taxonomy
 	register_taxonomy('ld_course_language', 'sfwd-courses', $course_language_args);
 
+	do_action('ld_custom_register_taxonomies');
 	// Return the modified $tax_options
 	return $tax_options;
 }
@@ -2138,6 +2047,36 @@ function show_site_tour() {
 }
 
 //add_action('wp_enqueue_scripts', 'show_site_tour');
+
+function custom_learndash_completion_redirect($redirect_url, $post_id) {
+	$courseId = learndash_get_course_id($post_id);//displayed course id
+	$currentCourseSteps = learndash_get_course_steps($courseId);//displayed course steps
+	$currentResourcePosition = array_search($post_id, $currentCourseSteps);//displayed resource position
+
+	$associatedCourses = get_post_meta($courseId, '_numeric_value', true);//comma seperated corresponding courses
+	$associatedCoursesArray = explode(',', $associatedCourses);//array converted
+	$user_id = bp_displayed_user_id();
+
+	foreach ($associatedCoursesArray as $associatedCourse) {
+		$courseSteps = learndash_get_course_steps($associatedCourse);
+		$correspondingResourceId = $courseSteps[$currentResourcePosition];//corresponding resource id
+
+		$post = get_post($correspondingResourceId);
+		learndash_process_mark_complete( $user_id, $correspondingResourceId );
+
+	}
+
+    return $redirect_url;
+}
+
+add_filter('learndash_completion_redirect', 'custom_learndash_completion_redirect', 10, 2);
+
+
+add_filter('learndash_process_mark_complete', 'always_return_true', 10, 3);
+
+function always_return_true($result, $post, $current_user) {
+    return true;
+}
 function complete_corresponding_quizzes($quizdata, $current_user)
 {
 	$user_id = $current_user->ID;
@@ -2214,218 +2153,32 @@ function learndash_get_course_quizzes($course_id = 0)
 
 
 
-//This code block is for gamipress notifications and some basic frontend changes when profile is updated
+include_once 'achievements_update.php';
 
-// Include custom notification file.
-require_once trailingslashit(get_template_directory() . '-child') . 'class-gamekeeper-notification.php';
+// Function to create ld_course_tags for WordPress roles
+function create_ld_course_tags_for_roles() {
+    // Get all WordPress roles
+    $wp_roles = wp_roles()->roles;
 
-add_action(
-	'bp_init',
-	function () {
-		// Register custom notification in preferences screen.
-		if (class_exists('BP_Custom_Notification')) {
-			BP_Custom_Notification::instance();
-		}
-	}
-);
+    // Roles to filter out
+    $exclude_roles = array('administrator', 'editor', 'author', 'contributor', 'subscriber');
 
-//The below function is used to make the profile completion widget show the hidden field complete
-add_action('xprofile_updated_profile', 'update_job_quit_field', 10, 5);
-function update_job_quit_field($user_id, $field_ids, $errors, $old_values, $new_values)
-{
-	$jobQuitValue = isset($new_values[2335]['value']) ? $new_values[2335]['value'] : '';
-	if ($jobQuitValue === 'Not Yet') {
-		xprofile_set_field_data(1905, $user_id, date("9999-13-11 00:00:00"));
-	}
+    // Check if there are roles
+    if (is_array($wp_roles) && !empty($wp_roles)) {
+        foreach ($wp_roles as $role_slug => $role_info) {
+            // Check if the role should be excluded
+            if (!in_array($role_slug, $exclude_roles)) {
+                // Check if the term already exists
+                $term_exists = term_exists($role_info['name'], 'ld_course_tag');
 
-	//enagic rank update
-
-	$enagic_rank_old_value = isset($old_values[8]) ? $old_values[8]['value'] : '1A';
-	$enagic_rank_new_value = isset($new_values[8]) ? $new_values[8]['value'] : '1A';
-
-	if (($enagic_rank_old_value < $enagic_rank_new_value)) {
-		if (strpos($enagic_rank_new_value, '6A') === false) {
-			$achievementid = bb_get_achievement_id_by_title($enagic_rank_new_value);
-
-			if (!gamipress_has_user_earned_achievement($achievementid, $user_id)):
-				gamipress_award_achievement_to_user($achievementid, $user_id);
-			endif;
-		} else {
-			$achievementid = bb_get_achievement_id_by_title($enagic_rank_new_value);
-			$gameKeepers = get_users(array('fields' => 'ID', 'role__in' => array('game_keeper')));
-			if (is_array($gameKeepers) && count($gameKeepers) > 0) {
-				foreach ($gameKeepers as $gameKeeper) {
-					$notification_args = array(
-						'user_id' => $gameKeeper,
-						'component_name' => 'gamekeeper_notifications',
-						'component_action' => 'member_enagic_rank_update',
-						'item_id' => $achievementid,
-						'secondary_item_id' => $user_id,
-						'recorded_time' => bp_core_current_time(),
-						'is_new' => 1,
-					);
-					bp_notifications_add_notification($notification_args);
-				}
-			}
-			xprofile_set_field_data(8, $user_id, $enagic_rank_old_value);
-		}
-	} else {
-		xprofile_set_field_data(8, $user_id, $enagic_rank_old_value);
-	}
-
-	//Soc rank update
-	$soc_rank_old_value = isset($old_values[1896]) ? $old_values[1896]['value'] : 'Star 1';
-	$soc_rank_new_value = isset($new_values[1896]) ? $new_values[1896]['value'] : 'Star 1';
-	if (($soc_rank_old_value < $soc_rank_new_value)) {
-		if ($soc_rank_new_value < 'Star 4') {
-
-			if (!gamipress_has_user_earned_achievement($achievementid, $user_id)):
-				gamipress_award_achievement_to_user($achievementid, $user_id);
-			endif;
-		} else {
-			$achievementid = bb_get_soc_achievement_id_by_title($soc_rank_new_value);
-			$gameKeepers = get_users(array('fields' => 'ID', 'role__in' => array('game_keeper')));
-			if (is_array($gameKeepers) && count($gameKeepers) > 0) {
-				foreach ($gameKeepers as $gameKeeper) {
-					$notification_args = array(
-						'user_id' => $gameKeeper,
-						'component_name' => 'gamekeeper_notifications',
-						'component_action' => 'member_enagic_rank_update',
-						'item_id' => $achievementid,
-						'secondary_item_id' => $user_id,
-						'recorded_time' => bp_core_current_time(),
-						'is_new' => 1,
-					);
-					bp_notifications_add_notification($notification_args);
-				}
-			}
-			xprofile_set_field_data(1896, $user_id, $soc_rank_old_value);
-		}
-	} else {
-		xprofile_set_field_data(1896, $user_id, $soc_rank_new_value);
-	}
-
+                // If the term doesn't exist, add it
+                if (!$term_exists || is_wp_error($term_exists)) {
+                    wp_insert_term($role_info['name'], 'ld_course_tag');
+                }
+            }
+        }
+    }
 }
 
-add_filter('bp_get_the_notification_description', 'custom_notification_description_filter', 10, 2);
-
-function custom_notification_description_filter($description, $notification)
-{
-	// Check if this is the notification you want to customize
-	if ($notification->component_name === 'gamekeeper_notifications' && ($notification->component_action === 'member_enagic_rank_update' || $notification->component_action === 'member_soc_rank_update')) {
-		// Fetch additional data based on secondary item ID
-		$member_id = $notification->secondary_item_id;
-		$achievementid = $notification->item_id;
-		$achievement = get_the_title($achievementid);
-
-		$awardReview = '';
-		$approvedAchievements = get_user_meta($member_id, 'reviewedAchievement_' . $achievement, true);
-		if (is_array($approvedAchievements) && isset($approvedAchievements[$notification->id])) {
-			$approvedAchievement = $approvedAchievements[$notification->id];
-		}
-		$status = $approvedAchievement['Status'];
-		$reviewerId = $approvedAchievement['Reviewed By'];
-		$reviewedBy = bp_core_get_user_displayname($reviewerId);
-		if ($reviewerId == get_current_user_id()) {
-			$reviewedBy = 'you';
-		}
-
-		if (!isset($approvedAchievements[$notification->id])) {
-			$approveBtn = '<button class="awardAchievment button small ' . $achievement . '" achievement-id="' . $achievementid . '" user-id="' . $member_id . '" notification-id="' . $notification->id . '">Approve</button>';
-			$rejectBtn = '<button class="rejectAchievement button outline small ' . $achievement . '" achievement-id="' . $achievementid . '" user-id="' . $member_id . '" notification-id="' . $notification->id . '">Reject</button>';
-		} else {
-			$awardReview = 'The user request has been ' . $status . ' by ' . $reviewedBy . '.';
-		}
-		$description .= '<div class="reviewAchievementUpdate" style="margin-top: 3px; gap: 5px; display: flex;">' . $approveBtn . $rejectBtn . $awardReview . '</div>';
-	}
-
-	return $description;
-}
-
-
-// Ajax handler for awarding requested achievement
-add_action('wp_ajax_awardRequestedAchievement', 'awardRequestedAchievement');
-function awardRequestedAchievement()
-{
-	$alreadyHigherRank = false;
-	$achievementId = intval($_POST['achievement_id']);
-	$userId = intval($_POST['user_id']);
-	$notification_id = intval($_POST['notification_id']);
-
-	$achievementTitle = get_the_title($achievementId);
-	$currentUserId = get_current_user_id();
-
-	if (!gamipress_has_user_earned_achievement($achievementId, $userId)) {
-		$latest_achievement_of_type = get_latest_achievement_by_type($userId, get_post_type($achievementId));
-		// wp_send_json($latest_achievement_of_type);
-		if ($latest_achievement_of_type < $achievementTitle) {
-			gamipress_award_achievement_to_user($achievementId, $userId);
-		} else {
-			$alreadyHigherRank = true;
-		}
-	}
-
-	$previousMeta = get_user_meta($userId, 'reviewedAchievement_' . $achievementTitle, true);
-	$approvedAchievementData = array(
-		'Status' => 'approved',
-		'Reviewed By' => $currentUserId,
-		'Achievement' => $achievementId,
-	);
-	$updatedMeta = !empty($previousMeta) ? $previousMeta : array();
-	$updatedMeta[$notification_id] = $approvedAchievementData;
-	if (!$alreadyHigherRank) {
-		update_user_meta($userId, 'reviewedAchievement_' . $achievementTitle, $updatedMeta);
-		$field_id = get_post_type($achievementId)==='enagic-rank'? '8' : '1896';
-		xprofile_set_field_data($field_id, $userId, $achievementTitle);
-		$approvedAchievementData['message'] = 'The user request has been approved by you.';
-	} else {
-		$approvedAchievementData['Status'] = 'reviewed';
-		update_user_meta($userId, 'reviewedAchievement_' . $achievementTitle, $updatedMeta);
-		$approvedAchievementData['message'] = 'The user request has been reviewed by you.';
-	}
-	wp_send_json_success($approvedAchievementData);
-}
-
-// Ajax handler for rejecting requested achievement
-add_action('wp_ajax_rejectRequestedAchievement', 'rejectRequestedAchievement');
-function rejectRequestedAchievement()
-{
-	$achievementId = intval($_POST['achievement_id']);
-	$userId = intval($_POST['user_id']);
-	$notification_id = intval($_POST['notification_id']);
-
-	$achievementTitle = get_the_title($achievementId);
-	$currentUserId = get_current_user_id();
-	
-	$previousMeta = get_user_meta($userId, 'reviewedAchievement_' . $achievementTitle, true);
-	$approvedAchievementData = array(
-		'Status' => 'rejected',
-		'Reviewed By' => $currentUserId,
-		'Achievement' => $achievementId,
-	);
-	$updatedMeta = !empty($previousMeta) ? $previousMeta : array();
-	$updatedMeta[$notification_id] = $approvedAchievementData;
-	update_user_meta($userId, 'reviewedAchievement_' . $achievementTitle, $updatedMeta);
-	$approvedAchievementData['message'] = 'The user request has been rejected by you.';
-	wp_send_json_success($approvedAchievementData);
-}
-
-//To get the latest achievement by type
-function get_latest_achievement_by_type($user_id, $type)
-{
-	global $wpdb;
-	// Adjust the table name based on your database prefix
-	$table_name = $wpdb->prefix . 'gamipress_user_earnings';
-	$query = $wpdb->prepare(
-		"SELECT title
-        FROM $table_name
-        WHERE post_type = %s
-        AND user_id = %d
-        ORDER BY date DESC
-        LIMIT 1",
-		$type,
-		$user_id
-	);
-	$result = $wpdb->get_var($query);
-	return $result ? $result : false;
-}
+// Hook the function to run on LearnDash custom taxonomies registration
+add_action('ld_custom_register_taxonomies', 'create_ld_course_tags_for_roles');

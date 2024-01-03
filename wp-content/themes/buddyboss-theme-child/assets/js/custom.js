@@ -71,65 +71,32 @@ jQuery(function () {
 	});
 
 			//Notification Buttons for gamekeepers
-	jQuery(document).on("click", 'button.awardAchievment', function (e) {
+	jQuery(document).on("click", 'div.reviewAchievementUpdate button', function (e) {
 		let requestedAchievementId = jQuery(this).attr("achievement-id");
 		let user_id = jQuery(this).attr("user-id");
 		let notification_id = jQuery(this).attr("notification-id");
+		let review_action =  jQuery(this).attr("review-action");
+		let newHtml = 'Rejecting...';
+		if(review_action === 'approve'){
+			 newHtml =  'Approving...';
+		}
 
-		// Store a reference to jQuery(this)
 		let $button = jQuery(this);
-		// Disable the current button and show loading
-		$button.prop('disabled', true).html('Approving...');
-
-		// Disable the sibling button(s) of the current button
-		$button.siblings('button').prop('disabled', true);
+		$button.html(newHtml);
+		$button.parent().find('button').prop('disabled', true);
 
 		var data = {
-			'action': 'awardRequestedAchievement',
+			'action': 'manageRequestedAchievement',
 			'achievement_id': requestedAchievementId,
 			'user_id': user_id,
 			'notification_id': notification_id,
+			'review_action': review_action,
 		};
 		jQuery.post(bb_vars.ajaxurl, data, function (response) {
 			console.log(response);
-			if (response.success) {
-				$message = response.data.message;
-				// Use the stored reference to update HTML
-				$button.parent().html($message);
-			}
+			$button.parent().html(response.data.Message)
 		});
 	});
-
-	jQuery(document).on("click", 'button.rejectAchievement', function (e) {
-		let requestedAchievementId = jQuery(this).attr("achievement-id");
-		let user_id = jQuery(this).attr("user-id");
-		let notification_id = jQuery(this).attr("notification-id");
-
-
-		// Store a reference to jQuery(this)
-		let $button = jQuery(this);
-		// Disable the current button and show loading
-		$button.prop('disabled', true).html('Rejecting...');
-
-		// Disable the sibling button(s) of the current button
-		$button.siblings('button').prop('disabled', true);
-
-		var data = {
-			'action': 'rejectRequestedAchievement',
-			'achievement_id': requestedAchievementId,
-			'user_id': user_id,
-			'notification_id': notification_id,
-		};
-		jQuery.post(bb_vars.ajaxurl, data, function (response) {
-			console.log(response);
-			if (response.success) {
-				$message = response.data.message;
-				// Use the stored reference to update HTML
-				$button.parent().html($message);
-			}
-		});
-	});
-
 
 	let saveButton = `<a href="#" class="custom_button button">Upload your photo</a>`;
 	jQuery(".field_2019 fieldset").append(saveButton);
