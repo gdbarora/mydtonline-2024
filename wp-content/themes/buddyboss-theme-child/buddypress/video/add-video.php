@@ -12,41 +12,22 @@
  * @version 1.7.0
  */
 
-if (((bp_is_my_profile() && bb_user_can_create_video()) || (bp_is_group() && is_user_logged_in() && groups_can_user_manage_video(bp_loggedin_user_id(), bp_get_current_group_id())))) { ?>
+if ( ( ( bp_is_my_profile() && bb_user_can_create_video() ) || ( bp_is_group() && is_user_logged_in() && groups_can_user_manage_video( bp_loggedin_user_id(), bp_get_current_group_id() ) ) ) ) { ?>
 
 	<div class="bb-video-actions-wrap bb-media-actions-wrap">
-		<h2 class="bb-title">
-			<?php esc_html_e('Albums', 'buddyboss'); ?>
-		</h2>
-		<!-- Customised SEction -->
-		<div class="bb-custom-media-controls">
-			<div class="bb-video-actions">
-				<a href="#" id="bp-add-video" class="bb-add-video button small outline">
-					<?php esc_html_e('Add Videos', 'buddyboss'); ?>
-				</a>
-			</div>
-			<div class="bb-media-actions">
-				<!-- <a href="#" id="bb-create-album" class="bb-create-album button small outline"><i
-						class="bb-icon-l bb-icon-plus"></i>
-					<?php //esc_html_e('Create Album', 'buddyboss'); ?>
-				</a>
- -->			</div>
-			<?php
-			//bp_get_template_part('media/create-album'); //Custom Line of Code
-			?>
+		<h2 class="bb-title"><?php esc_html_e( 'Videos', 'buddyboss' ); ?></h2>
+		<div class="bb-video-actions">
+			<a href="#" id="bp-add-video" class="bb-add-video button small outline"><?php esc_html_e( 'Add Videos', 'buddyboss' ); ?></a>
 		</div>
 	</div>
-	<!-- Customised SEction ends -->
-	
+
 	<?php
-	bp_get_template_part('video/uploader');
+	bp_get_template_part( 'video/uploader' );
 
 } else {
 	?>
 	<div class="bb-video-actions-wrap bb-media-actions-wrap">
-		<h2 class="bb-title">
-			<?php esc_html_e('Videos', 'buddyboss'); ?>
-		</h2>
+		<h2 class="bb-title"><?php esc_html_e( 'Videos', 'buddyboss' ); ?></h2>
 	</div>
 	<?php
 }

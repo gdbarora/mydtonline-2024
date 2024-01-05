@@ -396,3 +396,249 @@ if (jQuery('#bbp-s').length) {
     });
 });
 
+
+// Function to handle the AJAX request
+function createVideoAlbum(albumTitle) {
+	parentId = $('#bp-custom-video-albums-directory').attr('data-current-album');
+    // Send AJAX request
+    $.ajax({
+        type: 'POST',
+        url: ajaxurl, // WordPress AJAX URL
+        data: {
+            action: 'bp_custom_create_video_album',
+            albumTitle: albumTitle,
+			groupId: BP_Nouveau.group_messages.group_id,
+			parentFolderId: parentId,
+			user_id: JSON.parse(bb_pusher_vars.user_data).user_id
+        },
+        success: function(response) {
+            // Handle the AJAX response here
+            console.log(response);
+            $('#bp-video-create-album').hide();
+			getVideoAlbums(parentId);
+        },
+        error: function(error) {
+            // Handle the AJAX error here
+            console.error(error);
+			alert(error.data.message);
+        }
+    });
+}
+
+function  deleteSelectedAlbum(albumId){
+	var confirmed = confirm('Do you want to delete this album?');
+	if(confirmed){
+	$.ajax({
+		type: 'POST',
+        url: ajaxurl, // WordPress AJAX URL
+        data: {
+			action: 'bp_delete_video_album',
+			groupId: BP_Nouveau.group_messages.group_id,
+			parentFolderId: albumId,	
+        },
+        success: function(response) {
+			var parentId = $(this).find('#bp-custom-video-albums-directory').data('current-album');
+			getVideoAlbums(parentId);
+        },
+        error: function(error) {
+            // Handle the AJAX error here
+            console.error(error);
+        }
+    });}
+}
+
+function getVideoAlbums(parentFolderId = 0) {
+
+    $.ajax({
+        type: 'POST',
+        url: ajaxurl, // WordPress AJAX URL
+        data: {
+            action: 'bp_custom_get_video_album',
+			groupId: BP_Nouveau.group_messages.group_id,
+			parentFolderId: parentFolderId,
+			 
+        },
+		beforeSend:function(){
+			$('#custom-video-albums-stream').html(`<div id="bp-custom-ajax-loader">
+			<aside class="bp-feedback bp-messages loading">
+				<span class="bp-icon" aria-hidden="true"></span>
+				<p>Requesting the group video albums. Please wait.</p>
+			</aside>
+		</div>`);
+		},
+        success: function(response) {
+			// Handle the AJAX response here
+			console.log(response);
+		
+			// Update data-current-album attribute with the currentAlbumId
+			$('#bp-custom-video-albums-directory').attr('data-current-album', response.currentAlbumId);
+		
+			// Update the content of #custom-video-albums-stream with the received content
+			$('#custom-video-albums-stream').html(response.content);
+		
+			// Attach a click event to each li element with the class 'custom-video-album'
+			$('#custom-video-albums-stream li.custom-video-album').click(function (e) {
+				e.preventDefault(); // Prevent the default link behavior
+				var parentId = $(this).find('a.bs-cover-wrap').data('album-id');
+
+				// Check if the clicked element is not the span.delete-video-album
+				if (!$(e.target).is('span.delete-video-album')) {
+			
+					// Retrieve the album ID from the clicked li element
+			
+					// Call getVideoAlbums function with the parentId
+					getVideoAlbums(parentId);
+				}
+				else{
+					deleteSelectedAlbum(parentId);
+				}
+
+			});
+		
+			// Check if parentFolderId is not 0 and update #bp-custom-video-albums-directory content
+			if (parentFolderId !== 0) {
+				$('#bp-custom-video-albums-directory').html(response.directoryHTML);
+			}
+		
+			// Attach a click event to elements with class 'albumclickable' within #bp-custom-video-albums-directory
+			$('#bp-custom-video-albums-directory .albumclickable').on('click', function(e) {
+				// Retrieve folder ID from the clicked element
+				var folderId = $(this).find('span').attr('folder-id');
+		
+				// Call getVideoAlbums function with the folderId
+				getVideoAlbums(folderId);
+			});
+		},		
+        error: function(error) {
+            // Handle the AJAX error here
+            console.error(error);
+        }
+    });
+}
+
+function populateAlbums(parentId = 0, videoId=0){
+	console.log(parentId, videoId)
+	$('input#selected-video-id').val(videoId);
+	$.ajax({
+		type: 'POST',
+        url: ajaxurl, // WordPress AJAX URL
+        data: {
+			action: 'bp_custom_get_video_album',
+			groupId: BP_Nouveau.group_messages.group_id,
+			parentFolderId: parentId,
+			
+        },
+		beforeSend:function(){
+			// $('#custom-video-albums-stream').html(`<div id="bp-custom-ajax-loader">
+			// <aside class="bp-feedback bp-messages loading">
+			// <span class="bp-icon" aria-hidden="true"></span>
+			// <p>Requesting the group video albums. Please wait.</p>
+			// </aside>
+			// </div>`);
+		},
+        success: function(response) {
+			// Handle the AJAX response here
+			console.log(response);
+			$('input#current-folder-id').val(parentId);
+			$('#bp-custom-video-albums-directory').attr('data-current-album', response.currentAlbumId);
+			$('div.location-album-list-wrap div.albumlist').html(response.content);
+			$('div.location-album-list-wrap div.albumlist li.custom-video-album').click(function(e) {
+				e.preventDefault(); // Prevent the default link behavior
+				var parentId = $(this).find('a.bs-cover-wrap').data('album-id');
+				var videoId = $('input#selected-video-id').val();
+				populateAlbums(parentId, videoId);
+			});
+			$('div.location-album-list-wrap .breadcrumb').html(response.directoryHTML);
+			$('div.location-album-list-wrap .albumclickable').on('click', function(e){
+				folderId = $(this).find('span').attr('folder-id');
+				attachmentId = $('input#selected-video-id').val();
+				
+				populateAlbums(folderId, attachmentId);
+
+			})
+			
+			
+        },
+        error: function(error) {
+            // Handle the AJAX error here
+            console.error(error);
+        }
+    });
+
+}
+
+function moveVideoToCurrentFolder(videoId, albumId){
+	if(albumId != 0){
+	$.ajax({
+		type: 'POST',
+        url: ajaxurl, // WordPress AJAX URL
+        data: {
+			action: 'bp_move_video_to_album',
+			groupId: BP_Nouveau.group_messages.group_id,
+			parentFolderId: albumId,
+			attachmentId: videoId,			
+        },
+		beforeSend:function(){
+		},
+        success: function(response) {
+			// Handle the AJAX response here
+			console.log(response);
+			alert(response.message);
+			$('div.bp-video-move-file').hide();
+        },
+        error: function(error) {
+            // Handle the AJAX error here
+            console.error(error);
+        }
+    });}
+	else{
+		alert('Please Select Album First.');
+	}
+}
+
+
+
+jQuery(document).ready(function($){
+	getVideoAlbums();
+	$('body').on('click', '#bp-create-video-album', function(event){
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Show the element with the ID bp-video-create-album
+        $('#bp-video-create-album').show();
+    });
+
+
+    $('#bp-video-create-album-submit').click(function(event){
+        event.preventDefault();
+        var albumTitle = $('#bb-album-title').val();
+        if (albumTitle.trim() === '') {
+            alert('Please enter a valid album title.');
+            return;
+        }
+
+        // Call the function to send the AJAX request
+        createVideoAlbum(albumTitle);
+    });
+
+	$('body').on('click', 'li.move_video_to_videoalbum', function(event){
+		event.preventDefault();
+		
+		var attachmentId = $(this).find('a.dt-video-move').attr("data-video-id");
+		
+		$('div.bp-video-move-file').show();
+		
+		populateAlbums(0, attachmentId);
+	});
+
+	$('body').on('click','.bp-video-custom-move', function(e) {
+		e.preventDefault();
+		videoId = 	$('input#selected-video-id').val();
+		parentId = $('input#current-folder-id').val()
+
+		moveVideoToCurrentFolder(videoId, parentId);
+	});
+	
+
+
+});
