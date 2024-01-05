@@ -1977,58 +1977,6 @@ function show_rank_in_leaderboard_table($query, $query_vars, $leaderboard_id, $l
 	return $query;
 }
 
-//This Function Aims to show albums which contains videos in a group to be shown before those videos in videos section
-//add_action('bp_before_group_video_content', 'show_albums_with_videos');
-function show_albums_with_videos()
-{
-	// Check if we are in a group context
-	if (bp_is_group()) {
-		// Get the current group ID
-		$group_id = bp_get_current_group_id();
-		$group_obj = groups_get_group ( $group_id );
-
-		// Get albums related to the current group
-		$albums = bp_album_get(array('group_id' => $group_id));
-		echo '<ul class="bb-albums-list">';
-		foreach ($albums['albums'] as $album) {
-			$total_videos = $album->media['total_video'];
-			if ($total_videos > 0) {
-				?>
-				<li class="bb-album-list-item">
-					<div class="bb-album-cover-wrap">
-					<a class="bs-cover-wrap" href="<?php echo esc_url( bp_get_group_permalink( $group_obj ) . 'albums/' . $album->id ); ?>">
-							<?php if (!empty($album->media['medias'])): ?>
-								<img src="<?php echo esc_url($album->media['medias'][0]->attachment_data->media_album_cover); ?>" />
-							<?php endif; ?>
-
-							<div class="bb-album-content-wrap">
-								<h4>
-									<?php echo esc_html($album->title); ?>
-								</h4>
-								<span class="bb-album_date">
-									<?php echo esc_html(bp_core_format_date($album->date_created)); ?>
-								</span>
-								<div class="bb-album_stats">
-									<?php if (function_exists('bp_is_profile_albums_support_enabled') && function_exists('bp_is_group_albums_support_enabled') && function_exists('bp_is_active') && function_exists('bp_is_profile_video_support_enabled') && function_exists('bp_is_group_video_support_enabled')): ?>
-										<span class="bb-album_stats_videos">
-											<i class="bb-icon-l bb-icon-video"></i>
-											<?php echo esc_html(bp_core_number_format($total_videos)); ?>
-										</span>
-									<?php endif; ?>
-								</div>
-							</div>
-						</a>
-					</div>
-				</li>
-				<?php
-			}
-		}
-		echo '</ul>';
-	}
-
-}
-
-
 // Site tour guide line
 function enqueue_shepherd() {
     // Enqueue Shepherd.js stylesheet from CDN
@@ -2152,8 +2100,6 @@ function learndash_get_course_quizzes($course_id = 0)
 		}
 	}
 }
-
-
 
 
 // Function to create ld_course_tags for WordPress roles
