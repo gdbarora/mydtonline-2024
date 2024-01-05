@@ -151,6 +151,8 @@ include_once 'widgets/user_groups.php';
 include_once 'widgets/user_coach_badge.php';
 include_once 'widgets/user_rank.php';
 include_once 'widgets/user_points_gamipress.php';
+include_once 'achievements_update.php';
+include_once 'inc/video_albums.php';
 
 
 
@@ -1976,7 +1978,7 @@ function show_rank_in_leaderboard_table($query, $query_vars, $leaderboard_id, $l
 }
 
 //This Function Aims to show albums which contains videos in a group to be shown before those videos in videos section
-add_action('bp_before_group_video_content', 'show_albums_with_videos');
+//add_action('bp_before_group_video_content', 'show_albums_with_videos');
 function show_albums_with_videos()
 {
 	// Check if we are in a group context
@@ -2153,7 +2155,6 @@ function learndash_get_course_quizzes($course_id = 0)
 
 
 
-include_once 'achievements_update.php';
 
 // Function to create ld_course_tags for WordPress roles
 function create_ld_course_tags_for_roles() {
