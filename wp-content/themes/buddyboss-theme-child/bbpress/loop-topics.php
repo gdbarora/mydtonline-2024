@@ -42,7 +42,10 @@
 				}
 			}
 			?>
-			</h2>					<?php do_action( 'custom_bbp_template_before_new_post' ); ?>
+			</h2>					
+			<?php 
+			if(!bbp_is_single_forum()){do_action( 'custom_bbp_template_before_new_post' );} 
+			?>
 
 			<div class="bbp-forum-buttons-wrap">
 
