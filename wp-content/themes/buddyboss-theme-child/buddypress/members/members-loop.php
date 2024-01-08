@@ -17,6 +17,7 @@ $additional_class = '';
 if(isset($_POST['wpRole'])){
 	$additional_class = 'grid ';
 }
+$include = !empty($userIds) ? implode(',', $userIds) : "0";
 
 $footer_buttons_class = ( bp_is_active( 'friends' ) && bp_is_active( 'messages' ) ) ? ' footer-buttons-on' : '';
 
@@ -38,8 +39,7 @@ $enabled_joined_date   = ! function_exists( 'bb_enabled_member_directory_element
 	</div>
 <?php endif; ?>
 <?php //The below query string is customised ?>
-<?php if ( bp_has_members( bp_ajax_querystring( 'members' ).'&type=alphabetical&include='.implode(',', $userIds) ) ) : ?>
-
+<?php if ( bp_has_members( bp_ajax_querystring( 'members' ).'&type=alphabetical&include='.$include) ) : ?>
 	<ul id="members-list" class="<?= $additional_class.bp_nouveau_get_loop_classes(); ?>">
 
 		<?php
