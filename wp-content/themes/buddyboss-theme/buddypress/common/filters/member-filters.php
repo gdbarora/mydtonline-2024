@@ -85,7 +85,7 @@ $exclude_roles = array(
         </label>
         <div class="select-wrap">
             <select id="wp-role-order-by" data-bp-wp-role-filter="roles">
-			<option value=""><?php _e( 'All Roles', 'buddyboss' ); ?></option>
+			<option value=""><?php _e( 'All Types', 'buddyboss' ); ?></option>
                 <?php
                 foreach ($wp_role_options as $role => $name) {
 					if(!in_array($role, $exclude_roles)){
