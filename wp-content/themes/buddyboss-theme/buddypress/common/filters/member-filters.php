@@ -68,6 +68,8 @@ $wp_role_options = array(); // Initial empty option
 foreach ($wp_roles as $role => $details) {
     $wp_role_options[$role] = $details['name'];
 }
+// Sort the roles alphabetically
+asort($wp_role_options);
 $exclude_roles = array(
 	'super_administrator', // Super Administrator (for Multisite installations)
     'administrator',       // Administrator
