@@ -769,10 +769,11 @@ function get_buddypress_member_counts($days = 7)
 	$total_members_count = bp_core_get_active_member_count();
 
 	// Get the active BuddyPress members count within the selected timeframe
-	$active_members_count = $wpdb->get_var($wpdb->prepare(
-		"SELECT COUNT(DISTINCT user_id) FROM {$wpdb->prefix}bp_activity WHERE DATE(date_recorded) >= %s",
-		$days_ago
-	)
+	$active_members_count = $wpdb->get_var(
+		$wpdb->prepare(
+			"SELECT COUNT(DISTINCT user_id) FROM {$wpdb->prefix}bp_activity WHERE DATE(date_recorded) >= %s",
+			$days_ago
+		)
 	);
 
 	// Calculate the inactive BuddyPress members count as the difference between total and active members
@@ -898,10 +899,13 @@ function getSelectedMasterMind($folder_id, $sort_by = 'date', $order = 'desc', $
 
 
 	$ch = curl_init($api_url);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $access_token,
-		'Referer: ' . $referrer,
-	)
+	curl_setopt(
+		$ch,
+		CURLOPT_HTTPHEADER,
+		array(
+			'Authorization: Bearer ' . $access_token,
+			'Referer: ' . $referrer,
+		)
 	);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -1050,10 +1054,13 @@ function updateVimeoMeta($video_id, $new_description)
 
 	$ch = curl_init($api_url);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $access_token,
-		'Content-Type: application/json',
-	)
+	curl_setopt(
+		$ch,
+		CURLOPT_HTTPHEADER,
+		array(
+			'Authorization: Bearer ' . $access_token,
+			'Content-Type: application/json',
+		)
 	);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -1092,10 +1099,13 @@ function getVimeoDescription($video_id)
 	$api_url = "https://api.vimeo.com/videos/$video_id?fields=description";
 
 	$ch = curl_init($api_url);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $access_token,
-		'Content-Type: application/json',
-	)
+	curl_setopt(
+		$ch,
+		CURLOPT_HTTPHEADER,
+		array(
+			'Authorization: Bearer ' . $access_token,
+			'Content-Type: application/json',
+		)
 	);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -1262,7 +1272,9 @@ function assign_courses_by_tag_to_user($tag_name, $user_id)
 		while ($course_query->have_posts()) {
 			$course_query->the_post();
 			$course_id = get_the_ID();
-			$result = ld_update_course_access($user_id, $course_id);
+			if (!sfwd_lms_has_access($course_id, $user_id)) {
+				$result = ld_update_course_access($user_id, $course_id);
+			}
 		}
 		wp_reset_postdata();
 		return true; // Success
@@ -2215,7 +2227,8 @@ add_action('wp_ajax_nopriv_filter_members_by_wp_role', 'filter_members_by_wp_rol
 //Send Notification on New Courses alot
 add_action('learndash_update_course_access', 'custom_course_access_update', 10, 4);
 
-function custom_course_access_update($user_id, $course_id, $course_access_list, $remove) {
+function custom_course_access_update($user_id, $course_id, $course_access_list, $remove)
+{
 	$notification_args = array(
 		'user_id' => $user_id,
 		'component_name' => 'learndash_custom_notifications',
