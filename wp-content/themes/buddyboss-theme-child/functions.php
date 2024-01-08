@@ -589,24 +589,28 @@ function bb_announcements_change_posts_order($query)
 			$query->set('orderby', 'post_title');
 			$query->set('order', 'ASC');
 		elseif ($orderBy == "latest"):
-			$query->set('meta_query', array(
+			$query->set(
+				'meta_query',
 				array(
-					'key' => 'bb_announcement_date',
-					'type' => 'NUMERIC'
+					array(
+						'key' => 'bb_announcement_date',
+						'type' => 'NUMERIC'
+					)
 				)
-			)
 			);
 
 			$query->set('meta_key', 'bb_announcement_date');
 			$query->set('orderby', 'meta_value_num');
 			$query->set('order', 'DESC');
 		elseif ($orderBy == "oldest"):
-			$query->set('meta_query', array(
+			$query->set(
+				'meta_query',
 				array(
-					'key' => 'bb_announcement_date',
-					'type' => 'NUMERIC'
+					array(
+						'key' => 'bb_announcement_date',
+						'type' => 'NUMERIC'
+					)
 				)
-			)
 			);
 			$query->set('meta_key', 'bb_announcement_date');
 			$query->set('orderby', 'meta_value_num');
@@ -768,7 +772,8 @@ function get_buddypress_member_counts($days = 7)
 	$active_members_count = $wpdb->get_var($wpdb->prepare(
 		"SELECT COUNT(DISTINCT user_id) FROM {$wpdb->prefix}bp_activity WHERE DATE(date_recorded) >= %s",
 		$days_ago
-	));
+	)
+	);
 
 	// Calculate the inactive BuddyPress members count as the difference between total and active members
 	$inactive_members_count = $total_members_count - $active_members_count;
@@ -786,7 +791,9 @@ function buddypress_member_counts_shortcode($atts)
 	$atts = shortcode_atts(
 		array(
 			'days' => 7, // Default to 7 days
-		), $atts);
+		),
+		$atts
+	);
 
 	// Get the initial member counts
 	$member_counts = get_buddypress_member_counts($atts['days']);
@@ -839,13 +846,15 @@ add_action('wp_ajax_nopriv_buddypress_member_counts', 'buddypress_member_counts_
 
 
 if (function_exists('acf_add_options_page')) {
-	acf_add_options_page(array(
-		'page_title' => 'Course Content',
-		'menu_title' => 'Course Content',
-		'menu_slug' => 'course-content',
-		'capability' => 'edit_posts',
-		'redirect' => false
-	));
+	acf_add_options_page(
+		array(
+			'page_title' => 'Course Content',
+			'menu_title' => 'Course Content',
+			'menu_slug' => 'course-content',
+			'capability' => 'edit_posts',
+			'redirect' => false
+		)
+	);
 }
 
 function custom_learndash_taxonomies($taxonomies)
@@ -892,7 +901,8 @@ function getSelectedMasterMind($folder_id, $sort_by = 'date', $order = 'desc', $
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		'Authorization: Bearer ' . $access_token,
 		'Referer: ' . $referrer,
-	));
+	)
+	);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 	$response = curl_exec($ch);
@@ -1043,7 +1053,8 @@ function updateVimeoMeta($video_id, $new_description)
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		'Authorization: Bearer ' . $access_token,
 		'Content-Type: application/json',
-	));
+	)
+	);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -1084,7 +1095,8 @@ function getVimeoDescription($video_id)
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		'Authorization: Bearer ' . $access_token,
 		'Content-Type: application/json',
-	));
+	)
+	);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 	$response = curl_exec($ch);
@@ -1161,14 +1173,16 @@ function get_tag_suggestions()
 			$permalink = get_permalink();
 			$author_url = bp_core_get_userlink($author_id, false, true);
 			$author_name = bp_core_get_user_displayname($author_id);
-			$avatar_url = bp_core_fetch_avatar(array(
-				'item_id' => $author_id,
-				'type' => 'full',
-				'html' => FALSE,
-			));
+			$avatar_url = bp_core_fetch_avatar(
+				array(
+					'item_id' => $author_id,
+					'type' => 'full',
+					'html' => FALSE,
+				)
+			);
 			$topic_title = get_the_title();
 			$topic_tag_excerpt = get_the_excerpt();
-			$topic_excerpt =  mb_strimwidth($topic_tag_excerpt, 0, 110) . '...';
+			$topic_excerpt = mb_strimwidth($topic_tag_excerpt, 0, 110) . '...';
 			$how_old = bp_core_time_since(strtotime(get_the_date()));
 			$reply_count = bbp_get_topic_reply_count($topic_id);
 
@@ -1514,7 +1528,8 @@ function my_prefix_buddypress_link_on_leaderboards($output, $leaderboard_id, $po
 	$url = bp_core_get_user_domain($item['user_id']);
 
 	if ($leaderboard_id === 3231) {
-		return sprintf('<a href="%s">%s</a>',
+		return sprintf(
+			'<a href="%s">%s</a>',
 			$url,
 			$output
 		);
@@ -1522,7 +1537,8 @@ function my_prefix_buddypress_link_on_leaderboards($output, $leaderboard_id, $po
 
 	$country_name = xprofile_get_field_data('Country', $item['user_id']);
 	$country = empty($country_name) ? '' : ' (' . $country_name . ')';
-	return sprintf('<a href="%s">%s</a>' . $country,
+	return sprintf(
+		'<a href="%s">%s</a>' . $country,
 		$url,
 		$output
 	);
@@ -1546,17 +1562,20 @@ function custom_badge_on_leaderboards($output, $leaderboard_id, $position, $item
 	$url = bp_core_get_user_domain($item['user_id']);
 
 	if ($member_rank === 1) {
-		return sprintf($rank1 . '<a href="%s">%s</a> ',
+		return sprintf(
+			$rank1 . '<a href="%s">%s</a> ',
 			$url,
 			$output
 		);
 	} elseif ($member_rank === 2) {
-		return sprintf($rank2 . '<a href="%s">%s</a> ',
+		return sprintf(
+			$rank2 . '<a href="%s">%s</a> ',
 			$url,
 			$output
 		);
 	} elseif ($member_rank === 3) {
-		return sprintf($rank3 . '<a href="%s">%s</a> ',
+		return sprintf(
+			$rank3 . '<a href="%s">%s</a> ',
 			$url,
 			$output
 		);
@@ -1567,21 +1586,21 @@ function custom_badge_on_leaderboards($output, $leaderboard_id, $position, $item
 
 function my_prefix_custom_leaderboard_columns($columns, $leaderboard_id, $leaderboard)
 {
-	if($leaderboard_id == 3606) {
+	if ($leaderboard_id == 3606) {
 		unset($columns['position']);
 		$columns['enagic-rank'] = __('Enagic Rank');
 	}
-	if ($leaderboard_id === 3234 || $leaderboard_id===3231) {
+	if ($leaderboard_id === 3234 || $leaderboard_id === 3231) {
 		unset($columns['position']);
 		$columns['card-star'] = __('Rank');
 		$columns['point'] = __('Points');
-		
+
 		if ($leaderboard_id === 3231) {
 			unset($columns['card-star']);
 		}
 	}
 
-	
+
 	return $columns;
 }
 
@@ -1615,8 +1634,9 @@ function my_prefix_custom_leaderboard_column_output($output, $leaderboard_id, $p
 add_filter('gamipress_leaderboards_leaderboard_column_rank', 'my_prefix_custom_leaderboard_column_output', 10, 6);
 
 add_filter('gamipress_leaderboards_leaderboard_column_point', 'custom_points_suffix', 10, 6);
-function custom_points_suffix($output, $leaderboard_id, $position, $item, $column_name, $leaderboard_table){
-	if($leaderboard_id=== 3231){
+function custom_points_suffix($output, $leaderboard_id, $position, $item, $column_name, $leaderboard_table)
+{
+	if ($leaderboard_id === 3231) {
 		$output .= ' Points';
 	}
 	return $output;
@@ -1626,82 +1646,83 @@ function custom_points_suffix($output, $leaderboard_id, $position, $item, $colum
 //====================================
 
 // Shortcode to display completed and in-progress courses button and details
-function completed_courses_shortcode($atts) {
-    // Check if the user is logged in
-    if (is_user_logged_in()) {
-        $user_id = bp_displayed_user_id();
+function completed_courses_shortcode($atts)
+{
+	// Check if the user is logged in
+	if (is_user_logged_in()) {
+		$user_id = bp_displayed_user_id();
 
-        // Get all enrolled courses for the user
-        $enrolled_courses = learndash_user_get_enrolled_courses($user_id);
+		// Get all enrolled courses for the user
+		$enrolled_courses = learndash_user_get_enrolled_courses($user_id);
 
-        $user_data = get_userdata($user_id);
-        $user_name = $user_data->data->display_name;
-        $output = '';
+		$user_data = get_userdata($user_id);
+		$user_name = $user_data->data->display_name;
+		$output = '';
 
-        $output .= "<button id='show-completed-courses'>Show {$user_name}'s Courses</button>";
+		$output .= "<button id='show-completed-courses'>Show {$user_name}'s Courses</button>";
 
-        // Popup container for course details
-        $output .= '<div id="completed-courses-popup" class="ld-course-popup-container" style="display: none;">';
-        $output .= '<div class="ld-course-popup-content">';
-        $output .= '<h2>Courses List</h2>';
-        $output .= '<span class="close-course-complete-popup" id="closeCompletedCoursesPopup">&times;</span>';
-        $output .= '<div class="course-grid">'; // Added a container for the course grid
-        
-        // Completed courses will be displayed on the left side
-        $output .= '<div class="completed-courses">';
-        $output .= '<h3>Completed Courses</h3>';
-        $output .= '<ul class="completed-courses-list">';
-        
-        // Loop through enrolled courses to display completed courses
-        foreach ($enrolled_courses as $course_id) {
-            // Check if the course is completed
-            if (learndash_course_completed($user_id, $course_id)) {
-                $course = get_post($course_id);
-                $total_steps = learndash_get_course_steps_count($course_id);
-                $completed_steps = learndash_course_get_completed_steps($user_id, $course_id);
-              $completion_percentage = ($completed_steps / $total_steps) * 100;
+		// Popup container for course details
+		$output .= '<div id="completed-courses-popup" class="ld-course-popup-container" style="display: none;">';
+		$output .= '<div class="ld-course-popup-content">';
+		$output .= '<h2>Courses List</h2>';
+		$output .= '<span class="close-course-complete-popup" id="closeCompletedCoursesPopup">&times;</span>';
+		$output .= '<div class="course-grid">'; // Added a container for the course grid
 
-                // Display course information with steps
-                $output .= '<li class="course-item completed-course-item">';
-                $output .= '<div class="course-details">';
-//                 $output .= '<div class="ld-status-icon ld-status-complete ld-secondary-complete-icon" title="Completed">';
+		// Completed courses will be displayed on the left side
+		$output .= '<div class="completed-courses">';
+		$output .= '<h3>Completed Courses</h3>';
+		$output .= '<ul class="completed-courses-list">';
+
+		// Loop through enrolled courses to display completed courses
+		foreach ($enrolled_courses as $course_id) {
+			// Check if the course is completed
+			if (learndash_course_completed($user_id, $course_id)) {
+				$course = get_post($course_id);
+				$total_steps = learndash_get_course_steps_count($course_id);
+				$completed_steps = learndash_course_get_completed_steps($user_id, $course_id);
+				$completion_percentage = ($completed_steps / $total_steps) * 100;
+
+				// Display course information with steps
+				$output .= '<li class="course-item completed-course-item">';
+				$output .= '<div class="course-details">';
+				//                 $output .= '<div class="ld-status-icon ld-status-complete ld-secondary-complete-icon" title="Completed">';
 //                 $output .= '<img src="https://www.mydtonline.com/wp-content/uploads/2023/12/a52d4248ee1559908b63f3c2c7f73239-100-percent-circle-graph.png" alt="Completed">';
 //                 $output .= '</div>';
-          	$output .= '<div class="radial-progress progress" data-progress="' . round($completion_percentage) . '" style=" background-color: #138C51;';
+				$output .= '<div class="radial-progress progress" data-progress="' . round($completion_percentage) . '" style=" background-color: #138C51;';
 				$output .= '    background: conic-gradient(#138C51 0% ' . round($completion_percentage) . '%, #eee ' . round($completion_percentage) . '% 100%);">';
 				$output .= '    <div class="overlay">';
 				$output .= '        <span>' . round($completion_percentage) . '%</span>';
 				$output .= '    </div>';
 				$output .= '</div>';
-                $output .= '<h4 class="course-title"><a href="' . esc_url(get_permalink($course_id)) . '" target="_blank">' . esc_html($course->post_title) . '</a></h4>';
-                $output .= '<p class="course-steps"><span style="color: #05d786;">' . $completed_steps . '/' . $total_steps . '</span> steps completed</p>';
-                // Additional course details can be added here
-                $output .= '</div>'; // Close course-details
-                $output .= '</li>';
-            }
-        }
+				$output .= '<h4 class="course-title"><a href="' . esc_url(get_permalink($course_id)) . '" target="_blank">' . esc_html($course->post_title) . '</a></h4>';
+				$output .= '<p class="course-steps"><span style="color: #05d786;">' . $completed_steps . '/' . $total_steps . '</span> steps completed</p>';
+				// Additional course details can be added here
+				$output .= '</div>'; // Close course-details
+				$output .= '</li>';
+			}
+		}
 
-        $output .= '</ul>'; // Close completed-courses-list
-        $output .= '</div>'; // Close completed-courses
-        
+		$output .= '</ul>'; // Close completed-courses-list
+		$output .= '</div>'; // Close completed-courses
 
-        // In-progress courses will be displayed on the right side
-        $output .= '<div class="in-progress-courses">';
-        $output .= '<h3>In Progress Courses</h3>';
-        $output .= '<ul class="in-progress-courses-list">';
-        
-        // Loop through enrolled courses to display in-progress courses
-        foreach ($enrolled_courses as $course_id) {
-            // Check if the course is in-progress (not completed)
-            if (!learndash_course_completed($user_id, $course_id)) {
-                $course = get_post($course_id);
-                $total_steps = learndash_get_course_steps_count($course_id);
-                $completed_steps = learndash_course_get_completed_steps($user_id, $course_id);
 
-                // Calculate completion percentage
-                $completion_percentage = ($completed_steps / $total_steps) * 100;
-				
-				
+		// In-progress courses will be displayed on the right side
+		$output .= '<div class="in-progress-courses">';
+		$output .= '<h3>In Progress Courses</h3>';
+		$output .= '<ul class="in-progress-courses-list">';
+
+		// Loop through enrolled courses to display in-progress courses
+		foreach ($enrolled_courses as $course_id) {
+			// Check if the course is in-progress (not completed)
+			if (!learndash_course_completed($user_id, $course_id)) {
+				$course = get_post($course_id);
+				$total_steps = learndash_get_course_steps_count($course_id);
+				$completed_steps = learndash_course_get_completed_steps($user_id, $course_id);
+
+				// Calculate completion percentage
+				$completion_percentage = ($completed_steps / $total_steps) * 100;
+
+
 
 
 				// Display course information with steps
@@ -1715,28 +1736,28 @@ function completed_courses_shortcode($atts) {
 				$output .= '    </div>';
 				$output .= '</div>';
 
-				
-
-                $output .= '<h4 class="course-title"><a href="' . esc_url(get_permalink($course_id)) . '" target="_blank">' . esc_html($course->post_title) . '</a></h4>';
-                $output .= '<p class="course-steps"><span style="color: #05d786;">' . $completed_steps . '/' . $total_steps . '</span> steps completed</p>';
-                // Additional course details can be added here
-                $output .= '</div>'; // Close course-details
-                $output .= '</li>';
-            }
-        }
-
-        $output .= '</ul>'; // Close in-progress-courses-list
-        $output .= '</div>'; // Close in-progress-courses
-
-        $output .= '</div>'; // Close course-grid
-        $output .= '</div>'; // Close popup-content
-        $output .= '</div>'; // Close completed-courses-popup
 
 
-        return $output;
-    }
+				$output .= '<h4 class="course-title"><a href="' . esc_url(get_permalink($course_id)) . '" target="_blank">' . esc_html($course->post_title) . '</a></h4>';
+				$output .= '<p class="course-steps"><span style="color: #05d786;">' . $completed_steps . '/' . $total_steps . '</span> steps completed</p>';
+				// Additional course details can be added here
+				$output .= '</div>'; // Close course-details
+				$output .= '</li>';
+			}
+		}
 
-    return ''; // Return an empty string if the user is not logged in
+		$output .= '</ul>'; // Close in-progress-courses-list
+		$output .= '</div>'; // Close in-progress-courses
+
+		$output .= '</div>'; // Close course-grid
+		$output .= '</div>'; // Close popup-content
+		$output .= '</div>'; // Close completed-courses-popup
+
+
+		return $output;
+	}
+
+	return ''; // Return an empty string if the user is not logged in
 }
 
 add_shortcode('completed_courses', 'completed_courses_shortcode');
@@ -1744,35 +1765,36 @@ add_shortcode('completed_courses', 'completed_courses_shortcode');
 
 //=====================
 
-function learndash_custom_user_status_shortcode( $atts = array(), $content = '', $shortcode_slug = 'learndash_user_status' ) {
-	if ( learndash_is_active_theme( 'legacy' ) ) {
+function learndash_custom_user_status_shortcode($atts = array(), $content = '', $shortcode_slug = 'learndash_user_status')
+{
+	if (learndash_is_active_theme('legacy')) {
 		return $content;
 	}
 
 	/** This filter is documented in includes/shortcodes/ld_course_resume.php */
-	$atts = apply_filters( 'learndash_shortcode_atts', $atts, $shortcode_slug );
+	$atts = apply_filters('learndash_shortcode_atts', $atts, $shortcode_slug);
 
 
-		$user_id = bp_displayed_user_id();
+	$user_id = bp_displayed_user_id();
 
-	 
 
-	if ( empty( $atts ) ) {
-		$atts = array( 'return' => true );
-	} elseif ( ! isset( $atts['return'] ) ) {
+
+	if (empty($atts)) {
+		$atts = array('return' => true);
+	} elseif (!isset($atts['return'])) {
 		$atts['return'] = true;
 	}
 
 	$atts['isblock'] = true;
 
-	$course_info = SFWD_LMS::get_course_info( $user_id, $atts );
+	$course_info = SFWD_LMS::get_course_info($user_id, $atts);
 
 	ob_start();
 
 	SFWD_LMS::get_template(
 		'shortcodes/user-status.php',
 		array(
-			'course_info'    => $course_info,
+			'course_info' => $course_info,
 			'shortcode_atts' => $atts,
 		),
 		true
@@ -1783,7 +1805,7 @@ function learndash_custom_user_status_shortcode( $atts = array(), $content = '',
 	return $content;
 
 }
-add_shortcode( 'learndash_custom_user_status', 'learndash_custom_user_status_shortcode', 3 );
+add_shortcode('learndash_custom_user_status', 'learndash_custom_user_status_shortcode', 3);
 
 //==================================================
 
@@ -1862,12 +1884,13 @@ add_filter('gamipress_leaderboards_leaderboard_query_vars', 'show_enagic_rank_in
 add_filter("gamipress_leaderboards_leaderboard_query", 'show_rank_in_leaderboard_table', 10, 4);
 
 function show_rank_in_leaderboard_table($query, $query_vars, $leaderboard_id, $leaderboard)
-{	$current_year_start = date('Y-01-01');
+{
+	$current_year_start = date('Y-01-01');
 	$current_year_end = date('Y-12-31 23:59:59');
-	
+
 	$current_month_start = date('Y-m-01');
 	$current_month_end = date('Y-m-t 23:59:59');
-	
+
 	if ($leaderboard_id === 3234) {
 		$query = "SELECT SQL_CALC_FOUND_ROWS
 					user_id,
@@ -1920,8 +1943,7 @@ function show_rank_in_leaderboard_table($query, $query_vars, $leaderboard_id, $l
 					ORDER BY `rank` ASC
 				) AS final_result
 				WHERE `rank` <= 20;";
-	}
-	elseif ($leaderboard_id===3231){
+	} elseif ($leaderboard_id === 3231) {
 		$query = "SELECT SQL_CALC_FOUND_ROWS
 					user_id,
 					`rank` as `card-star`,
@@ -1978,12 +2000,13 @@ function show_rank_in_leaderboard_table($query, $query_vars, $leaderboard_id, $l
 }
 
 // Site tour guide line
-function enqueue_shepherd() {
-    // Enqueue Shepherd.js stylesheet from CDN
-    wp_enqueue_style('shepherd-css', 'https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css');
+function enqueue_shepherd()
+{
+	// Enqueue Shepherd.js stylesheet from CDN
+	wp_enqueue_style('shepherd-css', 'https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css');
 
-    // Enqueue Shepherd.js script from CDN
-    wp_enqueue_script('shepherd-js', 'https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js', array('jquery'), null, true);
+	// Enqueue Shepherd.js script from CDN
+	wp_enqueue_script('shepherd-js', 'https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js', array('jquery'), null, true);
 }
 
 //add_action('wp_enqueue_scripts', 'enqueue_shepherd');
@@ -1991,32 +2014,34 @@ function enqueue_shepherd() {
 
 
 
-function show_site_tour() {
-    // Enqueue the script to show the tour
-    wp_enqueue_script('site-tour-script', get_stylesheet_directory_uri() . '/assets/js/site-tour-script.js', array('jquery'), null, true);
+function show_site_tour()
+{
+	// Enqueue the script to show the tour
+	wp_enqueue_script('site-tour-script', get_stylesheet_directory_uri() . '/assets/js/site-tour-script.js', array('jquery'), null, true);
 }
 
 //add_action('wp_enqueue_scripts', 'show_site_tour');
 
-function custom_learndash_completion_redirect($redirect_url, $post_id) {
-	$courseId = learndash_get_course_id($post_id);//displayed course id
-	$currentCourseSteps = learndash_get_course_steps($courseId);//displayed course steps
-	$currentResourcePosition = array_search($post_id, $currentCourseSteps);//displayed resource position
+function custom_learndash_completion_redirect($redirect_url, $post_id)
+{
+	$courseId = learndash_get_course_id($post_id); //displayed course id
+	$currentCourseSteps = learndash_get_course_steps($courseId); //displayed course steps
+	$currentResourcePosition = array_search($post_id, $currentCourseSteps); //displayed resource position
 
-	$associatedCourses = get_post_meta($courseId, '_numeric_value', true);//comma seperated corresponding courses
-	$associatedCoursesArray = explode(',', $associatedCourses);//array converted
+	$associatedCourses = get_post_meta($courseId, '_numeric_value', true); //comma seperated corresponding courses
+	$associatedCoursesArray = explode(',', $associatedCourses); //array converted
 	$user_id = bp_displayed_user_id();
 
 	foreach ($associatedCoursesArray as $associatedCourse) {
 		$courseSteps = learndash_get_course_steps($associatedCourse);
-		$correspondingResourceId = $courseSteps[$currentResourcePosition];//corresponding resource id
+		$correspondingResourceId = $courseSteps[$currentResourcePosition]; //corresponding resource id
 
 		$post = get_post($correspondingResourceId);
-		learndash_process_mark_complete( $user_id, $correspondingResourceId );
+		learndash_process_mark_complete($user_id, $correspondingResourceId);
 
 	}
 
-    return $redirect_url;
+	return $redirect_url;
 }
 
 add_filter('learndash_completion_redirect', 'custom_learndash_completion_redirect', 10, 2);
@@ -2024,8 +2049,9 @@ add_filter('learndash_completion_redirect', 'custom_learndash_completion_redirec
 
 add_filter('learndash_process_mark_complete', 'always_return_true', 10, 3);
 
-function always_return_true($result, $post, $current_user) {
-    return true;
+function always_return_true($result, $post, $current_user)
+{
+	return true;
 }
 function complete_corresponding_quizzes($quizdata, $current_user)
 {
@@ -2081,16 +2107,16 @@ function learndash_get_course_quizzes($course_id = 0)
 {
 	if (!empty($course_id)) {
 		$query_args = array(
-			'post_type'      => 'sfwd-quiz',
+			'post_type' => 'sfwd-quiz',
 			'posts_per_page' => -1,
-			'meta_key'       => 'course_id',
-			'meta_value'     => $course_id,
-			'meta_compare'   => '=',
-			'orderby'        => 'menu_order',  // Order by menu order
-			'order'          => 'ASC',         // Choose 'ASC' for ascending or 'DESC' for descending
+			'meta_key' => 'course_id',
+			'meta_value' => $course_id,
+			'meta_compare' => '=',
+			'orderby' => 'menu_order',  // Order by menu order
+			'order' => 'ASC',         // Choose 'ASC' for ascending or 'DESC' for descending
 			// This tells WP_Query to return only the post IDs. Comment 
 			// out if you want full Post object
-			'fields'         => 'ids'
+			'fields' => 'ids'
 		);
 
 		$query_results = new WP_Query($query_args);
@@ -2103,29 +2129,86 @@ function learndash_get_course_quizzes($course_id = 0)
 
 
 // Function to create ld_course_tags for WordPress roles
-function create_ld_course_tags_for_roles() {
-    // Get all WordPress roles
-    $wp_roles = wp_roles()->roles;
+function create_ld_course_tags_for_roles()
+{
+	// Get all WordPress roles
+	$wp_roles = wp_roles()->roles;
 
-    // Roles to filter out
-    $exclude_roles = array('administrator', 'editor', 'author', 'contributor', 'subscriber');
+	// Roles to filter out
+	$exclude_roles = array('administrator', 'editor', 'author', 'contributor', 'subscriber');
 
-    // Check if there are roles
-    if (is_array($wp_roles) && !empty($wp_roles)) {
-        foreach ($wp_roles as $role_slug => $role_info) {
-            // Check if the role should be excluded
-            if (!in_array($role_slug, $exclude_roles)) {
-                // Check if the term already exists
-                $term_exists = term_exists($role_info['name'], 'ld_course_tag');
+	// Check if there are roles
+	if (is_array($wp_roles) && !empty($wp_roles)) {
+		foreach ($wp_roles as $role_slug => $role_info) {
+			// Check if the role should be excluded
+			if (!in_array($role_slug, $exclude_roles)) {
+				// Check if the term already exists
+				$term_exists = term_exists($role_info['name'], 'ld_course_tag');
 
-                // If the term doesn't exist, add it
-                if (!$term_exists || is_wp_error($term_exists)) {
-                    wp_insert_term($role_info['name'], 'ld_course_tag');
-                }
-            }
-        }
-    }
+				// If the term doesn't exist, add it
+				if (!$term_exists || is_wp_error($term_exists)) {
+					wp_insert_term($role_info['name'], 'ld_course_tag');
+				}
+			}
+		}
+	}
 }
 
 // Hook the function to run on LearnDash custom taxonomies registration
 add_action('ld_custom_register_taxonomies', 'create_ld_course_tags_for_roles');
+
+
+// Example: Customize the display of each member item in the members loop
+// function custom_bp_nouveau_member_hook(){
+// 	print_r($_POST);
+// }
+
+// // Hook into 'members_list_item'
+// add_action('bp_before_members_loop', 'custom_bp_nouveau_member_hook');
+
+
+function filter_members_by_wp_role()
+{
+	// Start output buffering
+	ob_start();
+
+	// Your custom query logic to fetch members by WordPress role goes here
+	// Example: $filteredMembers = get_members_by_wp_role($selectedRole);
+
+	// Output the members loop template part
+	bp_get_template_part('members/members-loop');
+
+	// Get the buffered output
+	$filteredMembers = ob_get_clean();
+
+	$responseData = array(
+		'contents' => $filteredMembers,
+		'scope' => sanitize_text_field($_POST['scope']),
+	);
+
+	if (!empty($GLOBALS['members_template'])) {
+		$responseData['count'] = bp_core_number_format($GLOBALS['members_template']->total_member_count);
+	}
+	wp_send_json_success($responseData);
+	// Always exit to avoid extra output
+	wp_die();
+
+}
+
+
+function get_user_ids_by_role($role)
+{
+	$users = get_users(array('role' => $role));
+
+	$user_ids = array();
+	foreach ($users as $user) {
+		$user_ids[] = $user->ID;
+	}
+
+	return $user_ids;
+}
+
+// Hook to make the AJAX function available
+add_action('wp_ajax_filter_members_by_wp_role', 'filter_members_by_wp_role');
+add_action('wp_ajax_nopriv_filter_members_by_wp_role', 'filter_members_by_wp_role'); // For non-logged-in users
+
