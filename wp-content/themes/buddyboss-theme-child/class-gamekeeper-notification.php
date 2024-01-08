@@ -65,6 +65,11 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
             esc_html__('Gamekeeper Notifications', 'buddyboss'), // For the frontend.
             esc_html__('Gamekeeper Notifications', 'buddyboss') // For the backend.
         );
+        $this->register_notification_group(
+            'learndash_custom_notifications',
+            esc_html__('Learndash Notifications', 'buddyboss'), // For the frontend.
+            esc_html__('Learndash Notifications', 'buddyboss') // For the backend.
+        );
 
         $this->register_custom_notification();
     }
@@ -101,6 +106,16 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
             false,
             'Notifies the gamekeeper if a user updates his soc rank above 4 Star'
         );
+        $this->register_notification_type(
+            'ld_user_enrolled',
+            esc_html__('Learndash Enrolled in New Course', 'buddyboss'),
+            esc_html__('Learndash Enrolled in New Course', 'buddyboss'),
+            'learndash_custom_notifications',
+            true,
+            false,
+            'Notifies if the user is enrolled in new course'
+        );
+
 
 
         /**
@@ -142,6 +157,12 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
             'member_soc_rank_update'     // Use the correct notification type here
         );
 
+        $this->register_notification(
+            'learndash_custom_notifications',
+            'ld_user_enrolled',    // Use the correct action here
+            'ld_user_enrolled'     // Use the correct notification type here
+        );
+
         /**
          * Register Notification Filter.
          *
@@ -157,6 +178,11 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
         $this->register_notification_filter(
             __('SOC update Notification Filter', 'buddyboss'),
             array('member_soc_rank_update'),
+            5
+        );
+        $this->register_notification_filter(
+            __('User enrolled in new course filter', 'buddyboss'),
+            array('ld_user_enrolled'),
             5
         );
     }
@@ -177,8 +203,6 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
      */
     public function format_notification($content, $achievement_id, $user_id, $action_item_count, $component_action_name, $component_name, $notification_id, $screen)
     {
-
-        $user = get_userdata($user_id);
         $member_name = bp_core_get_user_displayname($user_id);
         $profile_url = bp_core_get_user_domain($user_id);
 
@@ -187,9 +211,7 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
 
         if ('gamekeeper_notifications' === $component_name && 'member_enagic_rank_update' === $component_action_name) {
 
-            $avatar = bp_core_fetch_avatar(array('item_id' => $user_id, 'type'=> 'thumb', 'html' => false));
-
-            $text = esc_html__($member_name . ' has requested to upgrade their '.get_post_type_object(gamipress_get_post_type($achievement_id))->labels->singular_name.' to ' . $achievement_name, 'buddyboss');
+            $text = esc_html__($user_id . ' has requested to upgrade their '.get_post_type_object(gamipress_get_post_type($achievement_id))->labels->singular_name.' to ' . $achievement_name, 'buddyboss');
 
             /**
              * Change the text for Push Notifications  
@@ -203,6 +225,15 @@ class BP_Custom_Notification extends BP_Core_Notification_Abstract
                 'link' => $profile_url,
             );
         }
+
+        if ('learndash_custom_notifications' === $component_name && 'ld_user_enrolled' === $component_action_name) {
+            $text = $member_name.'! You have been successfully enrolled in the Course - '.get_the_title($achievement_id);
+            return array(
+                'text' => $text,
+                'link' => get_permalink($achievement_id),
+            );
+        }
+
 
         return $content;
     }

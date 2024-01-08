@@ -2212,3 +2212,18 @@ function get_user_ids_by_role($role)
 add_action('wp_ajax_filter_members_by_wp_role', 'filter_members_by_wp_role');
 add_action('wp_ajax_nopriv_filter_members_by_wp_role', 'filter_members_by_wp_role'); // For non-logged-in users
 
+//Send Notification on New Courses alot
+add_action('learndash_update_course_access', 'custom_course_access_update', 10, 4);
+
+function custom_course_access_update($user_id, $course_id, $course_access_list, $remove) {
+	$notification_args = array(
+		'user_id' => $user_id,
+		'component_name' => 'learndash_custom_notifications',
+		'component_action' => 'ld_user_enrolled',
+		'item_id' => $course_id,
+		'secondary_item_id' => $user_id,
+		'recorded_time' => bp_core_current_time(),
+		'is_new' => 1,
+	);
+	bp_notifications_add_notification($notification_args);
+}
