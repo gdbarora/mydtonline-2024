@@ -32,7 +32,7 @@ if ( bp_is_members_directory() ) {
 }
 
 // Get active member types
-$member_types = bp_get_active_member_types( $args );
+//$member_types = bp_get_active_member_types( $args );
 
 if ( ! empty( $member_types ) ) {
 	?>
@@ -68,6 +68,14 @@ $wp_role_options = array(); // Initial empty option
 foreach ($wp_roles as $role => $details) {
     $wp_role_options[$role] = $details['name'];
 }
+$exclude_roles = array(
+	'super_administrator', // Super Administrator (for Multisite installations)
+    'administrator',       // Administrator
+    'editor',              // Editor
+    'author',              // Author
+    'contributor',         // Contributor
+    'subscriber'
+)
 
 ?>
 <div id="wp-role-filters" class="component-filters clearfix">
@@ -80,7 +88,8 @@ foreach ($wp_roles as $role => $details) {
 			<option value=""><?php _e( 'All Roles', 'buddyboss' ); ?></option>
                 <?php
                 foreach ($wp_role_options as $role => $name) {
-                    echo "<option value='" . esc_attr($role) . "'>" . esc_html($name) . "</option>";
+					if(!in_array($role, $exclude_roles)){
+                    echo "<option value='" . esc_attr($role) . "'>" . esc_html($name) . "</option>";}
                 }
                 ?>
             </select>

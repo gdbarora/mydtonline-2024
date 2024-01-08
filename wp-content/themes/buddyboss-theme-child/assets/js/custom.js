@@ -643,16 +643,7 @@ jQuery(document).ready(function($){
 
 });
 
-jQuery(document).ready(function($) {
-	// Turn off the 'change' event handler for the specified element
-$(document).off("change", "#buddypress [data-bp-member-type-filter]", this.typeMemberFilterQuery);
-
-// Attach a new 'change' event handler for the specified element
-$(document).on('change', "#buddypress [data-bp-member-type-filter]", function() {
-    $('#wp-role-order-by').trigger('change');
-});
-
-	
+jQuery(document).ready(function($) {	
     // When the WordPress roles select field changes
     $('#wp-role-order-by').on('change', function() {
         // Get the selected WordPress role
@@ -664,20 +655,6 @@ $(document).on('change', "#buddypress [data-bp-member-type-filter]", function() 
 			data: {
 				action: 'filter_members_by_wp_role',
 				wpRole: selectedRole,
-				scope: 'all',
-				filter: 'active',
-				extras: {
-					layout: $('#buddypress').find('[data-object="members"] .layout-view.active').data('view'),
-				},
-				object: 'members', 
-				target: '#buddypress [data-bp-list]',
-				search_terms: '',
-				page: 1,
-				caller: '',
-				template: '',
-				method: 'reset',
-				member_type_id: $('#member-type-order-by').val(),
-				modbypass: '',
 			},
 			beforeSend: function(){
 				$('#members-all').addClass('loading');
